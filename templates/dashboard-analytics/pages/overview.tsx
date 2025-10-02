@@ -1,9 +1,9 @@
 'use client'
 
-import { Card, CardHeader, CardBody } from 'frontend-design-system/vendors/tailadmin/ui/card'
-import { CardDataStats } from 'frontend-design-system/vendors/tailadmin/analytics'
-import { ChartOne, ChartThree, ChartFour } from 'frontend-design-system/vendors/tailadmin/charts'
-import { Button } from 'frontend-design-system/vendors/tailadmin/ui/button'
+import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
+import { CardDataStats } from 'frontend-design-system/components/primitives'
+import { ChartOne, ChartThree, ChartFour } from 'frontend-design-system/components/primitives'
+import { Button } from 'frontend-design-system/components/primitives'
 import {
   EyeIcon,
   UsersIcon,
@@ -95,9 +95,9 @@ export default function AnalyticsDashboard() {
             <h3 className="text-lg font-semibold text-gray-900">Traffic Overview</h3>
             <p className="text-sm text-gray-500">Visitors and page views over time</p>
           </CardHeader>
-          <CardBody>
+          <CardContent>
             <ChartOne data={trafficData} />
-          </CardBody>
+          </CardContent>
         </Card>
         
         <Card>
@@ -105,9 +105,9 @@ export default function AnalyticsDashboard() {
             <h3 className="text-lg font-semibold text-gray-900">Conversion Tracking</h3>
             <p className="text-sm text-gray-500">Weekly conversion rate</p>
           </CardHeader>
-          <CardBody>
+          <CardContent>
             <ChartThree data={conversionData} />
-          </CardBody>
+          </CardContent>
         </Card>
       </div>
 
@@ -118,16 +118,16 @@ export default function AnalyticsDashboard() {
             <h3 className="text-lg font-semibold text-gray-900">Traffic Sources</h3>
             <p className="text-sm text-gray-500">Where your visitors come from</p>
           </CardHeader>
-          <CardBody>
+          <CardContent>
             <ChartFour data={trafficSources} />
-          </CardBody>
+          </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
             <h3 className="text-lg font-semibold text-gray-900">Device Breakdown</h3>
           </CardHeader>
-          <CardBody>
+          <CardContent>
             <div className="space-y-4">
               {deviceBreakdown.map((item, index) => (
                 <div key={index} className="flex items-center justify-between">
@@ -147,7 +147,7 @@ export default function AnalyticsDashboard() {
                 </div>
               ))}
             </div>
-          </CardBody>
+          </CardContent>
         </Card>
       </div>
 
@@ -157,7 +157,7 @@ export default function AnalyticsDashboard() {
           <h3 className="text-lg font-semibold text-gray-900">Top Pages</h3>
           <p className="text-sm text-gray-500">Most visited pages</p>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead>
@@ -180,7 +180,7 @@ export default function AnalyticsDashboard() {
               </tbody>
             </table>
           </div>
-        </CardBody>
+        </CardContent>
       </Card>
 
       {/* Geographic Data */}
@@ -189,7 +189,7 @@ export default function AnalyticsDashboard() {
           <h3 className="text-lg font-semibold text-gray-900">Top Countries</h3>
           <p className="text-sm text-gray-500">Visitors by country</p>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <div className="space-y-4">
             {topCountries.map((country, index) => (
               <div key={index} className="flex items-center justify-between">
@@ -209,7 +209,7 @@ export default function AnalyticsDashboard() {
               </div>
             ))}
           </div>
-        </CardBody>
+        </CardContent>
       </Card>
     </div>
   )

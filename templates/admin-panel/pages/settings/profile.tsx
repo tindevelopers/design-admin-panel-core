@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { Card, CardHeader, CardBody } from 'frontend-design-system/vendors/tailadmin/ui/card'
-import { Button } from 'frontend-design-system/vendors/tailadmin/ui/button'
-import { FormInput, FormTextarea } from 'frontend-design-system/vendors/tailadmin/form'
-import { Avatar } from 'frontend-design-system/vendors/tailadmin/ui/avatar'
+import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
+import { Button } from 'frontend-design-system/components/primitives'
+import { FormInput, FormTextarea } from 'frontend-design-system/components/primitives'
+import { Avatar } from 'frontend-design-system/components/primitives'
 import Breadcrumb from '../../components/Breadcrumb'
 
 export default function ProfileSettings() {
@@ -37,7 +37,7 @@ export default function ProfileSettings() {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {/* Profile Picture */}
         <Card>
-          <CardBody>
+          <CardContent>
             <div className="text-center">
               <Avatar src="/user.jpg" alt="Profile" size="xl" className="mx-auto" />
               <h3 className="mt-4 text-lg font-semibold text-gray-900">{formData.name}</h3>
@@ -46,7 +46,7 @@ export default function ProfileSettings() {
                 Change Photo
               </Button>
             </div>
-          </CardBody>
+          </CardContent>
         </Card>
 
         {/* Profile Form */}
@@ -56,7 +56,7 @@ export default function ProfileSettings() {
               <h3 className="text-lg font-semibold text-gray-900">Personal Information</h3>
               <p className="text-sm text-gray-500">Update your personal details</p>
             </CardHeader>
-            <CardBody>
+            <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <FormInput
                   label="Full Name"
@@ -105,7 +105,7 @@ export default function ProfileSettings() {
                   </Button>
                 </div>
               </form>
-            </CardBody>
+            </CardContent>
           </Card>
         </div>
       </div>

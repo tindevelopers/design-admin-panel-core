@@ -1,11 +1,11 @@
 'use client'
 
-import { Card, CardHeader, CardBody } from 'frontend-design-system/vendors/tailadmin/ui/card'
-import { CardDataStats } from 'frontend-design-system/vendors/tailadmin/analytics'
-import { ChartOne, ChartFour } from 'frontend-design-system/vendors/tailadmin/charts'
-import { Table, TableHeader, TableBody, TableRow, TableCell } from 'frontend-design-system/vendors/tailadmin/ui/table'
-import { Badge } from 'frontend-design-system/vendors/tailadmin/ui/badge'
-import { Button } from 'frontend-design-system/vendors/tailadmin/ui/button'
+import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
+import { CardDataStats } from 'frontend-design-system/components/primitives'
+import { ChartOne, ChartFour } from 'frontend-design-system/components/primitives'
+import { Table, TableHeader, TableBody, TableRow, TableCell } from 'frontend-design-system/components/primitives'
+import { Badge } from 'frontend-design-system/components/primitives'
+import { Button } from 'frontend-design-system/components/primitives'
 import { UsersIcon, BriefcaseIcon, CurrencyDollarIcon, PhoneIcon } from '@heroicons/react/24/outline'
 
 export default function CRMDashboard() {
@@ -60,16 +60,16 @@ export default function CRMDashboard() {
           <CardHeader>
             <h3 className="text-lg font-semibold text-gray-900">Sales Pipeline</h3>
           </CardHeader>
-          <CardBody>
+          <CardContent>
             <ChartFour data={salesPipeline} />
-          </CardBody>
+          </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
             <h3 className="text-lg font-semibold text-gray-900">Recent Activities</h3>
           </CardHeader>
-          <CardBody>
+          <CardContent>
             <div className="space-y-4">
               {recentActivities.map((activity, index) => (
                 <div key={index} className="flex items-start gap-3 border-b border-gray-200 pb-3 last:border-0">
@@ -81,7 +81,7 @@ export default function CRMDashboard() {
                 </div>
               ))}
             </div>
-          </CardBody>
+          </CardContent>
         </Card>
       </div>
 
@@ -90,7 +90,7 @@ export default function CRMDashboard() {
         <CardHeader>
           <h3 className="text-lg font-semibold text-gray-900">Recent Deals</h3>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
@@ -119,7 +119,7 @@ export default function CRMDashboard() {
               ))}
             </TableBody>
           </Table>
-        </CardBody>
+        </CardContent>
       </Card>
     </div>
   )

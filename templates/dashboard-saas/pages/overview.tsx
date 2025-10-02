@@ -1,9 +1,9 @@
 'use client'
 
-import { Card, CardHeader, CardBody } from 'frontend-design-system/vendors/tailadmin/ui/card'
-import { CardDataStats } from 'frontend-design-system/vendors/tailadmin/analytics'
-import { ChartOne, ChartThree } from 'frontend-design-system/vendors/tailadmin/charts'
-import { Button } from 'frontend-design-system/vendors/tailadmin/ui/button'
+import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
+import { CardDataStats } from 'frontend-design-system/components/primitives'
+import { ChartOne, ChartThree } from 'frontend-design-system/components/primitives'
+import { Button } from 'frontend-design-system/components/primitives'
 import { UsersIcon, CreditCardIcon, ArrowTrendingUpIcon, BoltIcon } from '@heroicons/react/24/outline'
 
 export default function SaaSDashboard() {
@@ -54,18 +54,18 @@ export default function SaaSDashboard() {
           <CardHeader>
             <h3 className="text-lg font-semibold text-gray-900">Monthly Recurring Revenue</h3>
           </CardHeader>
-          <CardBody>
+          <CardContent>
             <ChartOne data={mrrData} />
-          </CardBody>
+          </CardContent>
         </Card>
         
         <Card>
           <CardHeader>
             <h3 className="text-lg font-semibold text-gray-900">Churn Rate</h3>
           </CardHeader>
-          <CardBody>
+          <CardContent>
             <ChartThree data={churnData} />
-          </CardBody>
+          </CardContent>
         </Card>
       </div>
     </div>

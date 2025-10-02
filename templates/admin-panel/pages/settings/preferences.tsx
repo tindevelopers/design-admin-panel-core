@@ -1,11 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { Card, CardHeader, CardBody } from 'frontend-design-system/vendors/tailadmin/ui/card'
-import { Button } from 'frontend-design-system/vendors/tailadmin/ui/button'
-import { Switch, SwitchField } from 'frontend-design-system/vendors/catalyst/switch'
-import { Label, Description } from 'frontend-design-system/vendors/catalyst/fieldset'
-import { FormSelect } from 'frontend-design-system/vendors/tailadmin/form'
+import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
+import { Button } from 'frontend-design-system/components/primitives'
+import { Switch, SwitchField } from 'frontend-design-system/components/primitives'
+import { Label, Description } from 'frontend-design-system/components/primitives'
+import { FormSelect } from 'frontend-design-system/components/primitives'
 import Breadcrumb from '../../components/Breadcrumb'
 
 export default function PreferencesSettings() {
@@ -41,7 +41,7 @@ export default function PreferencesSettings() {
           <h3 className="text-lg font-semibold text-gray-900">Notifications</h3>
           <p className="text-sm text-gray-500">Manage how you receive notifications</p>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <div className="space-y-6">
             <SwitchField>
               <Label>Email Notifications</Label>
@@ -70,7 +70,7 @@ export default function PreferencesSettings() {
               />
             </SwitchField>
           </div>
-        </CardBody>
+        </CardContent>
       </Card>
 
       {/* Appearance */}
@@ -79,7 +79,7 @@ export default function PreferencesSettings() {
           <h3 className="text-lg font-semibold text-gray-900">Appearance</h3>
           <p className="text-sm text-gray-500">Customize how the interface looks</p>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <SwitchField>
             <Label>Dark Mode</Label>
             <Description>Use dark theme for the interface</Description>
@@ -88,7 +88,7 @@ export default function PreferencesSettings() {
               onChange={() => togglePreference('darkMode')}
             />
           </SwitchField>
-        </CardBody>
+        </CardContent>
       </Card>
 
       {/* Localization */}
@@ -97,7 +97,7 @@ export default function PreferencesSettings() {
           <h3 className="text-lg font-semibold text-gray-900">Localization</h3>
           <p className="text-sm text-gray-500">Set your language and timezone preferences</p>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <div className="space-y-6">
             <FormSelect
               label="Language"
@@ -129,7 +129,7 @@ export default function PreferencesSettings() {
               ]}
             />
           </div>
-        </CardBody>
+        </CardContent>
       </Card>
 
       <div className="flex gap-4">

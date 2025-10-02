@@ -1,9 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { Card, CardHeader, CardBody } from 'frontend-design-system/vendors/tailadmin/ui/card'
-import { Button } from 'frontend-design-system/vendors/tailadmin/ui/button'
-import { FormInput } from 'frontend-design-system/vendors/tailadmin/form'
+import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
+import { Button } from 'frontend-design-system/components/primitives'
+import { FormInput } from 'frontend-design-system/components/primitives'
 import Breadcrumb from '../../components/Breadcrumb'
 
 export default function AccountSettings() {
@@ -38,7 +38,7 @@ export default function AccountSettings() {
           <h3 className="text-lg font-semibold text-gray-900">Change Password</h3>
           <p className="text-sm text-gray-500">Update your password to keep your account secure</p>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <form onSubmit={handlePasswordChange} className="space-y-6">
             <FormInput
               label="Current Password"
@@ -74,7 +74,7 @@ export default function AccountSettings() {
               Update Password
             </Button>
           </form>
-        </CardBody>
+        </CardContent>
       </Card>
 
       {/* Two-Factor Authentication */}
@@ -83,7 +83,7 @@ export default function AccountSettings() {
           <h3 className="text-lg font-semibold text-gray-900">Two-Factor Authentication</h3>
           <p className="text-sm text-gray-500">Add an extra layer of security to your account</p>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-gray-900">Status: Not Enabled</p>
@@ -93,7 +93,7 @@ export default function AccountSettings() {
             </div>
             <Button variant="primary">Enable 2FA</Button>
           </div>
-        </CardBody>
+        </CardContent>
       </Card>
 
       {/* Active Sessions */}
@@ -102,7 +102,7 @@ export default function AccountSettings() {
           <h3 className="text-lg font-semibold text-gray-900">Active Sessions</h3>
           <p className="text-sm text-gray-500">Manage your active sessions across devices</p>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <div className="space-y-4">
             <div className="flex items-center justify-between border-b border-gray-200 pb-4">
               <div>
@@ -121,7 +121,7 @@ export default function AccountSettings() {
               </Button>
             </div>
           </div>
-        </CardBody>
+        </CardContent>
       </Card>
 
       {/* Danger Zone */}
@@ -130,7 +130,7 @@ export default function AccountSettings() {
           <h3 className="text-lg font-semibold text-red-600">Danger Zone</h3>
           <p className="text-sm text-gray-500">Irreversible actions for your account</p>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
@@ -144,7 +144,7 @@ export default function AccountSettings() {
               </Button>
             </div>
           </div>
-        </CardBody>
+        </CardContent>
       </Card>
     </div>
   )

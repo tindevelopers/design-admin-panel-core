@@ -1,11 +1,11 @@
 'use client'
 
-import { Card, CardHeader, CardBody } from 'frontend-design-system/vendors/tailadmin/ui/card'
-import { CardDataStats } from 'frontend-design-system/vendors/tailadmin/analytics'
-import { ChartOne } from 'frontend-design-system/vendors/tailadmin/charts'
-import { Table, TableHeader, TableBody, TableRow, TableCell } from 'frontend-design-system/vendors/tailadmin/ui/table'
-import { Badge } from 'frontend-design-system/vendors/tailadmin/ui/badge'
-import { Button } from 'frontend-design-system/vendors/tailadmin/ui/button'
+import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
+import { CardDataStats } from 'frontend-design-system/components/primitives'
+import { ChartOne } from 'frontend-design-system/components/primitives'
+import { Table, TableHeader, TableBody, TableRow, TableCell } from 'frontend-design-system/components/primitives'
+import { Badge } from 'frontend-design-system/components/primitives'
+import { Button } from 'frontend-design-system/components/primitives'
 import { TruckIcon, MapPinIcon, ClockIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
 
 export default function LogisticsDashboard() {
@@ -52,9 +52,9 @@ export default function LogisticsDashboard() {
         <CardHeader>
           <h3 className="text-lg font-semibold text-gray-900">Delivery Overview</h3>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <ChartOne data={deliveryData} />
-        </CardBody>
+        </CardContent>
       </Card>
 
       {/* Active Shipments */}
@@ -62,7 +62,7 @@ export default function LogisticsDashboard() {
         <CardHeader>
           <h3 className="text-lg font-semibold text-gray-900">Active Shipments</h3>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
@@ -93,7 +93,7 @@ export default function LogisticsDashboard() {
               ))}
             </TableBody>
           </Table>
-        </CardBody>
+        </CardContent>
       </Card>
     </div>
   )

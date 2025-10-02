@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter, useParams } from 'next/navigation'
-import { Card, CardHeader, CardBody } from 'frontend-design-system/vendors/tailadmin/ui/card'
-import { Button } from 'frontend-design-system/vendors/tailadmin/ui/button'
-import { FormInput, FormSelect, FormCheckbox } from 'frontend-design-system/vendors/tailadmin/form'
+import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
+import { Button } from 'frontend-design-system/components/primitives'
+import { FormInput, FormSelect, FormCheckbox } from 'frontend-design-system/components/primitives'
 import Breadcrumb from '../../components/Breadcrumb'
 
 export default function EditUser() {
@@ -59,7 +59,7 @@ export default function EditUser() {
           <h3 className="text-lg font-semibold text-gray-900">User Information</h3>
           <p className="text-sm text-gray-500">Update user details</p>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <form onSubmit={handleSubmit} className="space-y-6">
             <FormInput
               label="Full Name"
@@ -116,7 +116,7 @@ export default function EditUser() {
               </Button>
             </div>
           </form>
-        </CardBody>
+        </CardContent>
       </Card>
     </div>
   )

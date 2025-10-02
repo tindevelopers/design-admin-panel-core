@@ -1,9 +1,9 @@
 'use client'
 
-import { Card, CardHeader, CardBody } from 'frontend-design-system/vendors/tailadmin/ui/card'
-import { Table, TableHeader, TableBody, TableRow, TableCell } from 'frontend-design-system/vendors/tailadmin/ui/table'
-import { Button } from 'frontend-design-system/vendors/tailadmin/ui/button'
-import { Badge } from 'frontend-design-system/vendors/tailadmin/ui/badge'
+import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
+import { Table, TableHeader, TableBody, TableRow, TableCell } from 'frontend-design-system/components/primitives'
+import { Button } from 'frontend-design-system/components/primitives'
+import { Badge } from 'frontend-design-system/components/primitives'
 import Breadcrumb from '../components/Breadcrumb'
 
 export default function Reports() {
@@ -51,30 +51,30 @@ export default function Reports() {
       {/* Report Stats */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         <Card>
-          <CardBody>
+          <CardContent>
             <div className="text-center">
               <p className="text-sm text-gray-500">Total Reports</p>
               <p className="text-3xl font-bold text-gray-900 mt-2">48</p>
             </div>
-          </CardBody>
+          </CardContent>
         </Card>
         
         <Card>
-          <CardBody>
+          <CardContent>
             <div className="text-center">
               <p className="text-sm text-gray-500">This Month</p>
               <p className="text-3xl font-bold text-gray-900 mt-2">12</p>
             </div>
-          </CardBody>
+          </CardContent>
         </Card>
         
         <Card>
-          <CardBody>
+          <CardContent>
             <div className="text-center">
               <p className="text-sm text-gray-500">Processing</p>
               <p className="text-3xl font-bold text-gray-900 mt-2">3</p>
             </div>
-          </CardBody>
+          </CardContent>
         </Card>
       </div>
 
@@ -83,7 +83,7 @@ export default function Reports() {
         <CardHeader>
           <h3 className="text-lg font-semibold text-gray-900">Recent Reports</h3>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
@@ -133,7 +133,7 @@ export default function Reports() {
               ))}
             </TableBody>
           </Table>
-        </CardBody>
+        </CardContent>
       </Card>
     </div>
   )

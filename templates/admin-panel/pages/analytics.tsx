@@ -1,7 +1,7 @@
 'use client'
 
-import { Card, CardHeader, CardBody } from 'frontend-design-system/vendors/tailadmin/ui/card'
-import { ChartOne, ChartThree } from 'frontend-design-system/vendors/tailadmin/charts'
+import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
+import { ChartOne, ChartThree } from 'frontend-design-system/components/primitives'
 import Breadcrumb from '../components/Breadcrumb'
 
 export default function Analytics() {
@@ -33,33 +33,33 @@ export default function Analytics() {
       {/* Key Metrics */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         <Card>
-          <CardBody>
+          <CardContent>
             <div className="text-center">
               <p className="text-sm text-gray-500">Total Visitors</p>
               <p className="text-3xl font-bold text-gray-900 mt-2">33,600</p>
               <p className="text-sm text-green-600 mt-1">↑ 12.5% from last month</p>
             </div>
-          </CardBody>
+          </CardContent>
         </Card>
         
         <Card>
-          <CardBody>
+          <CardContent>
             <div className="text-center">
               <p className="text-sm text-gray-500">Page Views</p>
               <p className="text-3xl font-bold text-gray-900 mt-2">91,900</p>
               <p className="text-sm text-green-600 mt-1">↑ 8.3% from last month</p>
             </div>
-          </CardBody>
+          </CardContent>
         </Card>
         
         <Card>
-          <CardBody>
+          <CardContent>
             <div className="text-center">
               <p className="text-sm text-gray-500">Avg. Session Duration</p>
               <p className="text-3xl font-bold text-gray-900 mt-2">4:32</p>
               <p className="text-sm text-red-600 mt-1">↓ 2.1% from last month</p>
             </div>
-          </CardBody>
+          </CardContent>
         </Card>
       </div>
 
@@ -69,9 +69,9 @@ export default function Analytics() {
           <h3 className="text-lg font-semibold text-gray-900">Traffic Overview</h3>
           <p className="text-sm text-gray-500">Visitors and page views over time</p>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <ChartOne data={trafficData} />
-        </CardBody>
+        </CardContent>
       </Card>
 
       {/* Conversion Chart */}
@@ -80,9 +80,9 @@ export default function Analytics() {
           <h3 className="text-lg font-semibold text-gray-900">Conversion Rate</h3>
           <p className="text-sm text-gray-500">Weekly conversion tracking</p>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <ChartThree data={conversionData} />
-        </CardBody>
+        </CardContent>
       </Card>
 
       {/* Top Pages */}
@@ -90,7 +90,7 @@ export default function Analytics() {
         <CardHeader>
           <h3 className="text-lg font-semibold text-gray-900">Top Pages</h3>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <div className="space-y-4">
             <div className="flex items-center justify-between border-b border-gray-200 pb-3">
               <div>
@@ -123,7 +123,7 @@ export default function Analytics() {
               </div>
             </div>
           </div>
-        </CardBody>
+        </CardContent>
       </Card>
     </div>
   )
