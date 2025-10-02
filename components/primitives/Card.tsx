@@ -127,4 +127,21 @@ const CardFooter = React.forwardRef<HTMLDivElement, CardFooterProps>(
 
 CardFooter.displayName = 'CardFooter';
 
-export { Card, CardHeader, CardContent, CardFooter, cardVariants };
+// Card Body component (alias for CardContent for compatibility)
+export interface CardBodyProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+const CardBody = React.forwardRef<HTMLDivElement, CardBodyProps>(
+  ({ className, ...props }, ref) => {
+    return (
+      <div
+        className={cn('space-y-4', className)}
+        ref={ref}
+        {...props}
+      />
+    );
+  }
+);
+
+CardBody.displayName = 'CardBody';
+
+export { Card, CardHeader, CardContent, CardFooter, CardBody, cardVariants };
