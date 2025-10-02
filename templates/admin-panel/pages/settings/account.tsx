@@ -1,9 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { Card, CardHeader, CardContent } from '../../../components/primitives'
-import { Button } from '../../../components/primitives'
-import { FormInput } from '../../../components/primitives'
+import { Card, CardHeader, CardContent } from '../../../../components/primitives'
+import { Button } from '../../../../components/primitives'
+import { FormInput } from '../../../../components/primitives'
 import Breadcrumb from '../../components/Breadcrumb'
 
 export default function AccountSettings() {

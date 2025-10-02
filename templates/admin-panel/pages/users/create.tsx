@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Card, CardHeader, CardContent } from '../../../components/primitives'
-import { Button } from '../../../components/primitives'
-import { FormInput, FormSelect, FormCheckbox } from '../../../components/primitives'
+import { Card, CardHeader, CardContent } from '../../../../components/primitives'
+import { Button } from '../../../../components/primitives'
+import { FormInput, FormSelect, FormCheckbox } from '../../../../components/primitives'
 import Breadcrumb from '../../components/Breadcrumb'
 
 export default function CreateUser() {
