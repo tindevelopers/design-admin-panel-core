@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { cn } from '../../utils/cn';
 
 export interface DropdownProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -23,12 +23,12 @@ export const Dropdown: React.FC<DropdownProps> = ({
   
   const isOpen = controlledOpen !== undefined ? controlledOpen : internalOpen;
   
-  const handleOpenChange = (newOpen: boolean) => {
+  const handleOpenChange = useCallback((newOpen: boolean) => {
     if (controlledOpen === undefined) {
       setInternalOpen(newOpen);
     }
     onOpenChange?.(newOpen);
-  };
+  }, [controlledOpen, onOpenChange]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

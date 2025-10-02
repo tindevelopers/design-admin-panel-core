@@ -2,7 +2,7 @@
 
 import { Card, CardHeader, CardContent } from '../../../components/primitives'
 import { CardDataStats } from '../../../components/primitives'
-import { ChartOne, ChartFour } from '../../../components/primitives'
+import { ChartFour } from '../../../components/primitives'
 import { Table, TableHeader, TableBody, TableRow, TableCell } from '../../../components/primitives'
 import { Badge } from '../../../components/primitives'
 import { Button } from '../../../components/primitives'

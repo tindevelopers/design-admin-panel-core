@@ -2,7 +2,8 @@
  * Global TypeScript type definitions for the admin design system
  */
 
-import { ComponentSize, ComponentVariant, ComponentState } from '../tokens';
+import React from 'react';
+import { ComponentSize, ComponentVariant } from '../tokens';
 
 // Base component props that all components should extend
 export interface BaseComponentProps {
@@ -109,16 +110,16 @@ export interface AdminLayoutConfig {
 }
 
 // Data table types (for future admin components)
-export interface TableColumn<T = any> {
+export interface TableColumn<T = unknown> {
   key: keyof T;
   title: string;
   width?: number | string;
   sortable?: boolean;
   filterable?: boolean;
-  render?: (value: any, record: T, index: number) => React.ReactNode;
+  render?: (value: unknown, record: T, index: number) => React.ReactNode;
 }
 
-export interface DataTableProps<T = any> {
+export interface DataTableProps<T = unknown> {
   data: T[];
   columns: TableColumn<T>[];
   loading?: boolean;
@@ -148,15 +149,15 @@ export interface FormFieldConfig {
     max?: number;
     minLength?: number;
     maxLength?: number;
-    custom?: (value: any) => string | undefined;
+    custom?: (value: unknown) => string | undefined;
   };
-  options?: Array<{ label: string; value: any }>;
+  options?: Array<{ label: string; value: unknown }>;
 }
 
 export interface FormConfig {
   fields: FormFieldConfig[];
-  onSubmit: (values: Record<string, any>) => void | Promise<void>;
-  initialValues?: Record<string, any>;
+  onSubmit: (values: Record<string, unknown>) => void | Promise<void>;
+  initialValues?: Record<string, unknown>;
   validation?: 'onChange' | 'onBlur' | 'onSubmit';
 }
 
