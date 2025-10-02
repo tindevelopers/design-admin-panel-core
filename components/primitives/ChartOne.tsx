@@ -5,7 +5,7 @@ export interface ChartOneProps {
   className?: string;
 }
 
-export const ChartOne: React.FC<ChartOneProps> = ({ data, className }) => {
+export const ChartOne: React.FC<ChartOneProps> = ({ data: _data, className }) => {
   return (
     <div className={`h-64 w-full bg-gray-100 rounded-lg flex items-center justify-center ${className}`}>
       <div className="text-center">

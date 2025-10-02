@@ -5,7 +5,7 @@ export interface ChartTwoProps {
   className?: string;
 }
 
-export const ChartTwo: React.FC<ChartTwoProps> = ({ data, className }) => {
+export const ChartTwo: React.FC<ChartTwoProps> = ({ data: _data, className }) => {
   return (
     <div className={`h-64 w-full bg-gray-100 rounded-lg flex items-center justify-center ${className}`}>
       <div className="text-center">

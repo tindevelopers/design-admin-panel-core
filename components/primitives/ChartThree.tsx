@@ -5,7 +5,7 @@ export interface ChartThreeProps {
   className?: string;
 }
 
-export const ChartThree: React.FC<ChartThreeProps> = ({ data, className }) => {
+export const ChartThree: React.FC<ChartThreeProps> = ({ data: _data, className }) => {
   return (
     <div className={`h-64 w-full bg-gray-100 rounded-lg flex items-center justify-center ${className}`}>
       <div className="text-center">

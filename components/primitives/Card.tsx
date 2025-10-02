@@ -40,7 +40,7 @@ export interface CardProps
 }
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, variant, padding, hover, asChild = false, ...props }, ref) => {
+  ({ className, variant, padding, hover, asChild: _asChild = false, ...props }, ref) => {
     return (
       <div
         className={cn(cardVariants({ variant, padding, hover, className }))}
