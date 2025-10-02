@@ -1,8 +1,7 @@
 'use client'
 
-import { Card, CardHeader, CardBody } from 'frontend-design-system/vendors/tailadmin/ui/card'
-import { CardDataStats } from 'frontend-design-system/vendors/tailadmin/analytics'
-import { ChartOne, ChartTwo } from 'frontend-design-system/vendors/tailadmin/charts'
+import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
+import { Button } from 'frontend-design-system/components/primitives'
 import { 
   UsersIcon, 
   ShoppingCartIcon, 

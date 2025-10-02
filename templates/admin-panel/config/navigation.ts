@@ -1,7 +1,7 @@
 import {
   HomeIcon,
   UsersIcon,
-  SettingsIcon,
+  Cog6ToothIcon,
   ChartBarIcon,
   DocumentTextIcon,
 } from '@heroicons/react/24/outline'
@@ -43,11 +43,11 @@ export const navigation: NavigationItem[] = [
   {
     name: 'Settings',
     href: '/settings',
-    icon: SettingsIcon,
+    icon: Cog6ToothIcon,
     children: [
-      { name: 'Profile', href: '/settings/profile', icon: SettingsIcon },
-      { name: 'Account', href: '/settings/account', icon: SettingsIcon },
-      { name: 'Preferences', href: '/settings/preferences', icon: SettingsIcon },
+      { name: 'Profile', href: '/settings/profile', icon: Cog6ToothIcon },
+      { name: 'Account', href: '/settings/account', icon: Cog6ToothIcon },
+      { name: 'Preferences', href: '/settings/preferences', icon: Cog6ToothIcon },
     ],
   },
 ]
