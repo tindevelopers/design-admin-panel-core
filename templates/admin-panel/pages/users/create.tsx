@@ -1,45 +1,55 @@
-'use client'
+'use client';
 
-import React, { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { Card, CardHeader, CardContent } from '../../../../components/primitives'
-import { Button } from '../../../../components/primitives'
-import { FormInput, FormSelect, FormCheckbox } from '../../../../components/primitives'
-import Breadcrumb from '../../components/Breadcrumb'
+import { useRouter } from 'next/navigation';
+import React, { useState } from 'react';
+import {
+  Button,
+  Card,
+  CardContent,
+  CardHeader,
+  FormCheckbox,
+  FormInput,
+  FormSelect,
+} from '../../../../components/primitives';
+import Breadcrumb from '../../components/Breadcrumb';
 
 export default function CreateUser() {
-  const router = useRouter()
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     role: 'user',
     status: 'active',
     sendWelcomeEmail: true,
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Implement create user logic
-    console.log('Create user:', formData)
-    router.push('/users')
-  }
+    console.log('Create user:', formData);
+    router.push('/users');
+  };
 
   const handleChange = (field: string, value: unknown) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
 
   return (
     <div className="space-y-6">
       <Breadcrumb />
-      
+
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-semibold text-gray-900">Create User</h1>
       </div>
 
       <Card>
         <CardHeader>
-          <h3 className="text-lg font-semibold text-gray-900">User Information</h3>
-          <p className="text-sm text-gray-500">Fill in the details to create a new user</p>
+          <h3 className="text-lg font-semibold text-gray-900">
+            User Information
+          </h3>
+          <p className="text-sm text-gray-500">
+            Fill in the details to create a new user
+          </p>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -89,7 +99,9 @@ export default function CreateUser() {
               label="Send welcome email to the user"
               name="sendWelcomeEmail"
               checked={formData.sendWelcomeEmail}
-              onChange={(e) => handleChange('sendWelcomeEmail', e.target.checked)}
+              onChange={(e) =>
+                handleChange('sendWelcomeEmail', e.target.checked)
+              }
             />
 
             <div className="flex gap-4 pt-4">
@@ -108,5 +120,5 @@ export default function CreateUser() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }

@@ -41,9 +41,7 @@ export const Avatar: React.FC<AvatarProps> = ({
           className="h-full w-full rounded-full object-cover"
         />
       ) : (
-        <span className="font-medium">
-          {fallback || children || '?'}
-        </span>
+        <span className="font-medium">{fallback || children || '?'}</span>
       )}
     </div>
   );

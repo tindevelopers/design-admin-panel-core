@@ -1,7 +1,8 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
 
-export interface DropdownItemProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface DropdownItemProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   icon?: React.ReactNode;
   destructive?: boolean;

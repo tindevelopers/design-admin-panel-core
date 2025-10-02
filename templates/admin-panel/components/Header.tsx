@@ -1,15 +1,15 @@
-'use client'
+'use client';
 
-import { Fragment } from 'react'
-import { Menu, Transition } from '@headlessui/react'
-import { BellIcon, UserCircleIcon } from '@heroicons/react/24/outline'
-import clsx from 'clsx'
+import { Menu, Transition } from '@headlessui/react';
+import { BellIcon, UserCircleIcon } from '@heroicons/react/24/outline';
+import clsx from 'clsx';
+import { Fragment } from 'react';
 
 const userNavigation = [
   { name: 'Your Profile', href: '/settings/profile' },
   { name: 'Settings', href: '/settings/account' },
   { name: 'Sign out', href: '/logout' },
-]
+];
 
 export default function Header() {
   return (
@@ -18,21 +18,33 @@ export default function Header() {
         <div className="flex flex-1"></div>
         <div className="flex items-center gap-x-4 lg:gap-x-6">
           {/* Notifications */}
-          <button type="button" className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
+          <button
+            type="button"
+            className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500"
+          >
             <span className="sr-only">View notifications</span>
             <BellIcon className="h-6 w-6" aria-hidden="true" />
           </button>
 
           {/* Separator */}
-          <div className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-200" aria-hidden="true" />
+          <div
+            className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-200"
+            aria-hidden="true"
+          />
 
           {/* Profile dropdown */}
           <Menu as="div" className="relative">
             <Menu.Button className="-m-1.5 flex items-center p-1.5">
               <span className="sr-only">Open user menu</span>
-              <UserCircleIcon className="h-8 w-8 text-gray-400" aria-hidden="true" />
+              <UserCircleIcon
+                className="h-8 w-8 text-gray-400"
+                aria-hidden="true"
+              />
               <span className="hidden lg:flex lg:items-center">
-                <span className="ml-4 text-sm font-semibold leading-6 text-gray-900" aria-hidden="true">
+                <span
+                  className="ml-4 text-sm leading-6 font-semibold text-gray-900"
+                  aria-hidden="true"
+                >
                   Admin User
                 </span>
               </span>
@@ -68,5 +80,5 @@ export default function Header() {
         </div>
       </div>
     </div>
-  )
+  );
 }

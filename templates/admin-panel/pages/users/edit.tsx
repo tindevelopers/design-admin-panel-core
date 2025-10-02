@@ -1,23 +1,28 @@
-'use client'
+'use client';
 
-import React, { useState, useEffect } from 'react'
-import { useRouter, useParams } from 'next/navigation'
-import { Card, CardHeader, CardContent } from '../../../../components/primitives'
-import { Button } from '../../../../components/primitives'
-import { FormInput, FormSelect } from '../../../../components/primitives'
-import Breadcrumb from '../../components/Breadcrumb'
+import { useParams, useRouter } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
+import {
+  Button,
+  Card,
+  CardContent,
+  CardHeader,
+  FormInput,
+  FormSelect,
+} from '../../../../components/primitives';
+import Breadcrumb from '../../components/Breadcrumb';
 
 export default function EditUser() {
-  const router = useRouter()
-  const params = useParams()
-  const userId = params.id
+  const router = useRouter();
+  const params = useParams();
+  const userId = params.id;
 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     role: 'user',
     status: 'active',
-  })
+  });
 
   useEffect(() => {
     // Fetch user data - replace with real API call
@@ -28,35 +33,37 @@ export default function EditUser() {
         email: 'john.doe@example.com',
         role: 'admin',
         status: 'active',
-      }
-      setFormData(userData)
-    }
-    
-    fetchUser()
-  }, [userId])
+      };
+      setFormData(userData);
+    };
+
+    fetchUser();
+  }, [userId]);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Implement update user logic
-    console.log('Update user:', userId, formData)
-    router.push('/users')
-  }
+    console.log('Update user:', userId, formData);
+    router.push('/users');
+  };
 
   const handleChange = (field: string, value: unknown) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
 
   return (
     <div className="space-y-6">
       <Breadcrumb />
-      
+
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-semibold text-gray-900">Edit User</h1>
       </div>
 
       <Card>
         <CardHeader>
-          <h3 className="text-lg font-semibold text-gray-900">User Information</h3>
+          <h3 className="text-lg font-semibold text-gray-900">
+            User Information
+          </h3>
           <p className="text-sm text-gray-500">Update user details</p>
         </CardHeader>
         <CardContent>
@@ -119,5 +126,5 @@ export default function EditUser() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }

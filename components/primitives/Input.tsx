@@ -1,5 +1,5 @@
-import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
+import React from 'react';
 import { cn } from '../../utils/cn';
 
 // Input variants
@@ -11,7 +11,8 @@ const inputVariants = cva(
       variant: {
         default: 'border-border-primary focus:border-primary-500',
         error: 'border-error-500 focus:border-error-500 focus-ring-error',
-        success: 'border-success-500 focus:border-success-500 focus-ring-success',
+        success:
+          'border-success-500 focus:border-success-500 focus-ring-success',
       },
       size: {
         sm: 'px-2 py-1 text-sm',
@@ -38,19 +39,22 @@ export interface InputProps
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ 
-    className, 
-    variant, 
-    size, 
-    label,
-    helperText,
-    errorMessage,
-    leftIcon,
-    rightIcon,
-    fullWidth = true,
-    id,
-    ...props 
-  }, ref) => {
+  (
+    {
+      className,
+      variant,
+      size,
+      label,
+      helperText,
+      errorMessage,
+      leftIcon,
+      rightIcon,
+      fullWidth = true,
+      id,
+      ...props
+    },
+    ref
+  ) => {
     const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
     const hasError = variant === 'error' || !!errorMessage;
     const actualVariant = hasError ? 'error' : variant;
@@ -58,21 +62,21 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className={cn('space-y-1', fullWidth ? 'w-full' : 'w-auto')}>
         {label && (
-          <label 
+          <label
             htmlFor={inputId}
-            className="block text-label-lg text-text-secondary"
+            className="text-label-lg text-text-secondary block"
           >
             {label}
           </label>
         )}
-        
+
         <div className="relative">
           {leftIcon && (
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
               <span className="text-text-muted">{leftIcon}</span>
             </div>
           )}
-          
+
           <input
             id={inputId}
             className={cn(
@@ -84,19 +88,21 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             {...props}
           />
-          
+
           {rightIcon && (
-            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
               <span className="text-text-muted">{rightIcon}</span>
             </div>
           )}
         </div>
-        
+
         {(helperText || errorMessage) && (
-          <p className={cn(
-            'text-label-sm',
-            hasError ? 'text-error-500' : 'text-text-muted'
-          )}>
+          <p
+            className={cn(
+              'text-label-sm',
+              hasError ? 'text-error-500' : 'text-text-muted'
+            )}
+          >
             {errorMessage || helperText}
           </p>
         )}

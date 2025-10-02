@@ -1,6 +1,5 @@
-import React from 'react';
 import { render } from '@testing-library/react';
-import { Button, Card, Input, Badge } from '../../components/primitives';
+import { Badge, Button, Card, Input } from '../../components/primitives';
 
 describe('Components', () => {
   test('Button renders correctly', () => {

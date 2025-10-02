@@ -21,7 +21,12 @@ export const CardDataStats: React.FC<CardDataStatsProps> = ({
   className,
 }) => {
   return (
-    <div className={cn('rounded-lg border border-gray-200 bg-white p-6 shadow-sm', className)}>
+    <div
+      className={cn(
+        'rounded-lg border border-gray-200 bg-white p-6 shadow-sm',
+        className
+      )}
+    >
       <div className="flex items-center justify-between">
         <div>
           <p className="text-sm font-medium text-gray-600">{title}</p>

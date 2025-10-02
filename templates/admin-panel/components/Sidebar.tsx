@@ -1,22 +1,26 @@
-'use client'
+'use client';
 
-import { Fragment, useState } from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { Dialog, Transition } from '@headlessui/react'
-import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/outline'
-import { navigation } from '../config/navigation'
-import clsx from 'clsx'
+import { Dialog, Transition } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import clsx from 'clsx';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Fragment, useState } from 'react';
+import { navigation } from '../config/navigation';
 
 export default function Sidebar() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-  const pathname = usePathname()
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
       {/* Mobile sidebar */}
       <Transition.Root show={sidebarOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-50 lg:hidden" onClose={setSidebarOpen}>
+        <Dialog
+          as="div"
+          className="relative z-50 lg:hidden"
+          onClose={setSidebarOpen}
+        >
           <Transition.Child
             as={Fragment}
             enter="transition-opacity ease-linear duration-300"
@@ -49,16 +53,25 @@ export default function Sidebar() {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <div className="absolute left-full top-0 flex w-16 justify-center pt-5">
-                    <button type="button" className="-m-2.5 p-2.5" onClick={() => setSidebarOpen(false)}>
+                  <div className="absolute top-0 left-full flex w-16 justify-center pt-5">
+                    <button
+                      type="button"
+                      className="-m-2.5 p-2.5"
+                      onClick={() => setSidebarOpen(false)}
+                    >
                       <span className="sr-only">Close sidebar</span>
-                      <XMarkIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                      <XMarkIcon
+                        className="h-6 w-6 text-white"
+                        aria-hidden="true"
+                      />
                     </button>
                   </div>
                 </Transition.Child>
                 <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
                   <div className="flex h-16 shrink-0 items-center">
-                    <h1 className="text-xl font-bold text-gray-900">Admin Panel</h1>
+                    <h1 className="text-xl font-bold text-gray-900">
+                      Admin Panel
+                    </h1>
                   </div>
                   <nav className="flex flex-1 flex-col">
                     <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -71,13 +84,15 @@ export default function Sidebar() {
                                 className={clsx(
                                   pathname === item.href
                                     ? 'bg-gray-50 text-blue-600'
-                                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50',
+                                    : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600',
                                   'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
                                 )}
                               >
                                 <item.icon
                                   className={clsx(
-                                    pathname === item.href ? 'text-blue-600' : 'text-gray-400 group-hover:text-blue-600',
+                                    pathname === item.href
+                                      ? 'text-blue-600'
+                                      : 'text-gray-400 group-hover:text-blue-600',
                                     'h-6 w-6 shrink-0'
                                   )}
                                   aria-hidden="true"
@@ -119,13 +134,15 @@ export default function Sidebar() {
                         className={clsx(
                           pathname === item.href
                             ? 'bg-gray-50 text-blue-600'
-                            : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50',
+                            : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600',
                           'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
                         )}
                       >
                         <item.icon
                           className={clsx(
-                            pathname === item.href ? 'text-blue-600' : 'text-gray-400 group-hover:text-blue-600',
+                            pathname === item.href
+                              ? 'text-blue-600'
+                              : 'text-gray-400 group-hover:text-blue-600',
                             'h-6 w-6 shrink-0'
                           )}
                           aria-hidden="true"
@@ -148,12 +165,18 @@ export default function Sidebar() {
 
       {/* Mobile menu button */}
       <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden">
-        <button type="button" className="-m-2.5 p-2.5 text-gray-700 lg:hidden" onClick={() => setSidebarOpen(true)}>
+        <button
+          type="button"
+          className="-m-2.5 p-2.5 text-gray-700 lg:hidden"
+          onClick={() => setSidebarOpen(true)}
+        >
           <span className="sr-only">Open sidebar</span>
           <Bars3Icon className="h-6 w-6" aria-hidden="true" />
         </button>
-        <div className="flex-1 text-sm font-semibold leading-6 text-gray-900">Admin Panel</div>
+        <div className="flex-1 text-sm leading-6 font-semibold text-gray-900">
+          Admin Panel
+        </div>
       </div>
     </>
-  )
+  );
 }

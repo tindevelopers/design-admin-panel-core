@@ -1,10 +1,18 @@
-'use client'
+'use client';
 
-import { Card, CardHeader, CardContent } from '../../../components/primitives'
-import { Table, TableHeader, TableBody, TableRow, TableCell } from '../../../components/primitives'
-import { Button } from '../../../components/primitives'
-import { Badge } from '../../../components/primitives'
-import Breadcrumb from '../components/Breadcrumb'
+import {
+  Badge,
+  Button,
+  Card,
+  CardContent,
+  CardHeader,
+  Table,
+  TableBody,
+  TableCell,
+  TableHeader,
+  TableRow,
+} from '../../../components/primitives';
+import Breadcrumb from '../components/Breadcrumb';
 
 export default function Reports() {
   // Sample data - replace with real data from your API
@@ -37,12 +45,12 @@ export default function Reports() {
       generatedAt: '2024-03-15',
       status: 'completed',
     },
-  ]
+  ];
 
   return (
     <div className="space-y-6">
       <Breadcrumb />
-      
+
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-semibold text-gray-900">Reports</h1>
         <Button variant="primary">Generate Report</Button>
@@ -54,25 +62,25 @@ export default function Reports() {
           <CardContent>
             <div className="text-center">
               <p className="text-sm text-gray-500">Total Reports</p>
-              <p className="text-3xl font-bold text-gray-900 mt-2">48</p>
+              <p className="mt-2 text-3xl font-bold text-gray-900">48</p>
             </div>
           </CardContent>
         </Card>
-        
+
         <Card>
           <CardContent>
             <div className="text-center">
               <p className="text-sm text-gray-500">This Month</p>
-              <p className="text-3xl font-bold text-gray-900 mt-2">12</p>
+              <p className="mt-2 text-3xl font-bold text-gray-900">12</p>
             </div>
           </CardContent>
         </Card>
-        
+
         <Card>
           <CardContent>
             <div className="text-center">
               <p className="text-sm text-gray-500">Processing</p>
-              <p className="text-3xl font-bold text-gray-900 mt-2">3</p>
+              <p className="mt-2 text-3xl font-bold text-gray-900">3</p>
             </div>
           </CardContent>
         </Card>
@@ -81,7 +89,9 @@ export default function Reports() {
       {/* Reports Table */}
       <Card>
         <CardHeader>
-          <h3 className="text-lg font-semibold text-gray-900">Recent Reports</h3>
+          <h3 className="text-lg font-semibold text-gray-900">
+            Recent Reports
+          </h3>
         </CardHeader>
         <CardContent>
           <Table>
@@ -98,7 +108,9 @@ export default function Reports() {
               {reports.map((report) => (
                 <TableRow key={report.id}>
                   <TableCell>
-                    <div className="font-medium text-gray-900">{report.name}</div>
+                    <div className="font-medium text-gray-900">
+                      {report.name}
+                    </div>
                   </TableCell>
                   <TableCell>
                     <div className="text-gray-500">{report.type}</div>
@@ -112,8 +124,8 @@ export default function Reports() {
                         report.status === 'completed'
                           ? 'success'
                           : report.status === 'processing'
-                          ? 'warning'
-                          : 'danger'
+                            ? 'warning'
+                            : 'danger'
                       }
                     >
                       {report.status}
@@ -136,5 +148,5 @@ export default function Reports() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }

@@ -9,8 +9,21 @@ export type { ButtonProps } from './Button';
 export { Input, inputVariants } from './Input';
 export type { InputProps } from './Input';
 
-export { Card, CardHeader, CardContent, CardFooter, CardBody, cardVariants } from './Card';
-export type { CardProps, CardHeaderProps, CardContentProps, CardFooterProps, CardBodyProps } from './Card';
+export {
+  Card,
+  CardBody,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  cardVariants,
+} from './Card';
+export type {
+  CardBodyProps,
+  CardContentProps,
+  CardFooterProps,
+  CardHeaderProps,
+  CardProps,
+} from './Card';
 
 export { Badge, badgeVariants } from './Badge';
 export type { BadgeProps } from './Badge';
@@ -30,8 +43,14 @@ export type { ChartThreeProps } from './ChartThree';
 export { ChartFour } from './ChartFour';
 export type { ChartFourProps } from './ChartFour';
 
-export { Table, TableHeader, TableBody, TableRow, TableCell } from './Table';
-export type { TableProps, TableHeaderProps, TableBodyProps, TableRowProps, TableCellProps } from './Table';
+export { Table, TableBody, TableCell, TableHeader, TableRow } from './Table';
+export type {
+  TableBodyProps,
+  TableCellProps,
+  TableHeaderProps,
+  TableProps,
+  TableRowProps,
+} from './Table';
 
 export { FormInput } from './FormInput';
 export type { FormInputProps } from './FormInput';

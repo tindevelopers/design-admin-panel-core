@@ -1,5 +1,5 @@
-import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
+import React from 'react';
 import { cn } from '../../utils/cn';
 
 // Badge variants
@@ -10,14 +10,16 @@ const badgeVariants = cva(
     variants: {
       variant: {
         primary: 'bg-primary-100 text-primary-800 border border-primary-200',
-        secondary: 'bg-secondary-100 text-secondary-800 border border-secondary-200',
+        secondary:
+          'bg-secondary-100 text-secondary-800 border border-secondary-200',
         success: 'bg-success-100 text-success-800 border border-success-200',
         warning: 'bg-warning-100 text-warning-800 border border-warning-200',
         error: 'bg-error-100 text-error-800 border border-error-200',
         danger: 'bg-red-100 text-red-800 border border-red-200',
         info: 'bg-info-100 text-info-800 border border-info-200',
         neutral: 'bg-neutral-100 text-neutral-800 border border-neutral-200',
-        outline: 'border border-border-primary text-text-secondary bg-transparent',
+        outline:
+          'border border-border-primary text-text-secondary bg-transparent',
       },
       size: {
         sm: 'px-1.5 py-0.5 text-xs',
@@ -46,17 +48,20 @@ export interface BadgeProps
 }
 
 const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
-  ({ 
-    className, 
-    variant, 
-    size, 
-    dot,
-    icon,
-    removable = false,
-    onRemove,
-    children,
-    ...props 
-  }, ref) => {
+  (
+    {
+      className,
+      variant,
+      size,
+      dot,
+      icon,
+      removable = false,
+      onRemove,
+      children,
+      ...props
+    },
+    ref
+  ) => {
     return (
       <span
         className={cn(badgeVariants({ variant, size, dot, className }))}
@@ -64,23 +69,23 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
         {...props}
       >
         {dot && (
-          <span className={cn(
-            'inline-block w-1.5 h-1.5 rounded-full mr-1.5',
-            variant === 'primary' && 'bg-primary-500',
-            variant === 'secondary' && 'bg-secondary-500',
-            variant === 'success' && 'bg-success-500',
-            variant === 'warning' && 'bg-warning-500',
-            variant === 'error' && 'bg-error-500',
-            variant === 'danger' && 'bg-red-500',
-            variant === 'info' && 'bg-info-500',
-            variant === 'neutral' && 'bg-neutral-500',
-            variant === 'outline' && 'bg-text-secondary',
-          )} />
+          <span
+            className={cn(
+              'mr-1.5 inline-block h-1.5 w-1.5 rounded-full',
+              variant === 'primary' && 'bg-primary-500',
+              variant === 'secondary' && 'bg-secondary-500',
+              variant === 'success' && 'bg-success-500',
+              variant === 'warning' && 'bg-warning-500',
+              variant === 'error' && 'bg-error-500',
+              variant === 'danger' && 'bg-red-500',
+              variant === 'info' && 'bg-info-500',
+              variant === 'neutral' && 'bg-neutral-500',
+              variant === 'outline' && 'bg-text-secondary'
+            )}
+          />
         )}
-        
-        {icon && !dot && (
-          <span className="mr-1">{icon}</span>
-        )}
+
+        {icon && !dot && <span className="mr-1">{icon}</span>}
 
         {children}
 
@@ -88,12 +93,12 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
           <button
             type="button"
             onClick={onRemove}
-            className="ml-1 inline-flex items-center justify-center w-3 h-3 rounded-full hover:bg-black/10 focus:outline-none focus:bg-black/10"
+            className="ml-1 inline-flex h-3 w-3 items-center justify-center rounded-full hover:bg-black/10 focus:bg-black/10 focus:outline-none"
             aria-label="Remove badge"
             title="Remove badge"
           >
             <svg
-              className="w-2 h-2"
+              className="h-2 w-2"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"

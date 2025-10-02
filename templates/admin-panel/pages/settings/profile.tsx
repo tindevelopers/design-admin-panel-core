@@ -1,11 +1,16 @@
-'use client'
+'use client';
 
-import React, { useState } from 'react'
-import { Card, CardHeader, CardContent } from '../../../../components/primitives'
-import { Button } from '../../../../components/primitives'
-import { FormInput, FormTextarea } from '../../../../components/primitives'
-import { Avatar } from '../../../../components/primitives'
-import Breadcrumb from '../../components/Breadcrumb'
+import React, { useState } from 'react';
+import {
+  Avatar,
+  Button,
+  Card,
+  CardContent,
+  CardHeader,
+  FormInput,
+  FormTextarea,
+} from '../../../../components/primitives';
+import Breadcrumb from '../../components/Breadcrumb';
 
 export default function ProfileSettings() {
   const [formData, setFormData] = useState({
@@ -14,24 +19,26 @@ export default function ProfileSettings() {
     bio: 'System administrator',
     phone: '+1 (555) 123-4567',
     location: 'San Francisco, CA',
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Implement save logic
-    console.log('Save profile:', formData)
-  }
+    console.log('Save profile:', formData);
+  };
 
   const handleChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
 
   return (
     <div className="space-y-6">
       <Breadcrumb />
-      
+
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-gray-900">Profile Settings</h1>
+        <h1 className="text-2xl font-semibold text-gray-900">
+          Profile Settings
+        </h1>
       </div>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
@@ -39,8 +46,15 @@ export default function ProfileSettings() {
         <Card>
           <CardContent>
             <div className="text-center">
-              <Avatar src="/user.jpg" alt="Profile" size="xl" className="mx-auto" />
-              <h3 className="mt-4 text-lg font-semibold text-gray-900">{formData.name}</h3>
+              <Avatar
+                src="/user.jpg"
+                alt="Profile"
+                size="xl"
+                className="mx-auto"
+              />
+              <h3 className="mt-4 text-lg font-semibold text-gray-900">
+                {formData.name}
+              </h3>
               <p className="text-sm text-gray-500">{formData.email}</p>
               <Button variant="secondary" size="sm" className="mt-4">
                 Change Photo
@@ -53,8 +67,12 @@ export default function ProfileSettings() {
         <div className="lg:col-span-2">
           <Card>
             <CardHeader>
-              <h3 className="text-lg font-semibold text-gray-900">Personal Information</h3>
-              <p className="text-sm text-gray-500">Update your personal details</p>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Personal Information
+              </h3>
+              <p className="text-sm text-gray-500">
+                Update your personal details
+              </p>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -110,5 +128,5 @@ export default function ProfileSettings() {
         </div>
       </div>
     </div>
-  )
+  );
 }

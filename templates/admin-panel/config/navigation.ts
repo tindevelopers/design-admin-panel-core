@@ -1,18 +1,18 @@
-import React from 'react'
 import {
+  ChartBarIcon,
+  Cog6ToothIcon,
+  DocumentTextIcon,
   HomeIcon,
   UsersIcon,
-  Cog6ToothIcon,
-  ChartBarIcon,
-  DocumentTextIcon,
-} from '@heroicons/react/24/outline'
+} from '@heroicons/react/24/outline';
+import React from 'react';
 
 export interface NavigationItem {
-  name: string
-  href: string
-  icon: React.ComponentType<{ className?: string }>
-  badge?: string
-  children?: NavigationItem[]
+  name: string;
+  href: string;
+  icon: React.ComponentType<{ className?: string }>;
+  badge?: string;
+  children?: NavigationItem[];
 }
 
 export const navigation: NavigationItem[] = [
@@ -48,10 +48,14 @@ export const navigation: NavigationItem[] = [
     children: [
       { name: 'Profile', href: '/settings/profile', icon: Cog6ToothIcon },
       { name: 'Account', href: '/settings/account', icon: Cog6ToothIcon },
-      { name: 'Preferences', href: '/settings/preferences', icon: Cog6ToothIcon },
+      {
+        name: 'Preferences',
+        href: '/settings/preferences',
+        icon: Cog6ToothIcon,
+      },
     ],
   },
-]
+];
 
 // To remove a menu item, simply delete or comment out the corresponding object
 // Example: To remove Analytics, delete the Analytics object from the array

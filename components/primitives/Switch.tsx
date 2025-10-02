@@ -1,7 +1,8 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
 
-export interface SwitchProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface SwitchProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   helperText?: string;
   errorMessage?: string;
@@ -26,10 +27,7 @@ export const Switch: React.FC<SwitchProps> = ({
           <input
             id={switchId}
             type="checkbox"
-            className={cn(
-              'peer sr-only',
-              className
-            )}
+            className={cn('peer sr-only', className)}
             {...props}
           />
           <label
@@ -43,15 +41,16 @@ export const Switch: React.FC<SwitchProps> = ({
           </label>
         </div>
         {label && (
-          <label htmlFor={switchId} className="text-sm font-medium text-gray-700">
+          <label
+            htmlFor={switchId}
+            className="text-sm font-medium text-gray-700"
+          >
             {label}
-            {required && <span className="text-red-500 ml-1">*</span>}
+            {required && <span className="ml-1 text-red-500">*</span>}
           </label>
         )}
       </div>
-      {errorMessage && (
-        <p className="text-sm text-red-600">{errorMessage}</p>
-      )}
+      {errorMessage && <p className="text-sm text-red-600">{errorMessage}</p>}
       {helperText && !errorMessage && (
         <p className="text-sm text-gray-500">{helperText}</p>
       )}

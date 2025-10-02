@@ -1,7 +1,8 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
 
-export interface DescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+export interface DescriptionProps
+  extends React.HTMLAttributes<HTMLParagraphElement> {}
 
 export const Description: React.FC<DescriptionProps> = ({
   children,
@@ -9,13 +10,7 @@ export const Description: React.FC<DescriptionProps> = ({
   ...props
 }) => {
   return (
-    <p
-      className={cn(
-        'text-sm text-gray-500',
-        className
-      )}
-      {...props}
-    >
+    <p className={cn('text-sm text-gray-500', className)} {...props}>
       {children}
     </p>
   );

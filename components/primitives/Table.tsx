@@ -16,42 +16,60 @@ export const Table: React.FC<TableProps> = ({ className, ...props }) => {
   );
 };
 
-export interface TableHeaderProps extends React.HTMLAttributes<HTMLTableSectionElement> {
+export interface TableHeaderProps
+  extends React.HTMLAttributes<HTMLTableSectionElement> {
   className?: string;
 }
 
-export const TableHeader: React.FC<TableHeaderProps> = ({ className, ...props }) => {
-  return (
-    <thead className={cn('bg-gray-50', className)} {...props} />
-  );
+export const TableHeader: React.FC<TableHeaderProps> = ({
+  className,
+  ...props
+}) => {
+  return <thead className={cn('bg-gray-50', className)} {...props} />;
 };
 
-export interface TableBodyProps extends React.HTMLAttributes<HTMLTableSectionElement> {
+export interface TableBodyProps
+  extends React.HTMLAttributes<HTMLTableSectionElement> {
   className?: string;
 }
 
-export const TableBody: React.FC<TableBodyProps> = ({ className, ...props }) => {
+export const TableBody: React.FC<TableBodyProps> = ({
+  className,
+  ...props
+}) => {
   return (
-    <tbody className={cn('bg-white divide-y divide-gray-200', className)} {...props} />
+    <tbody
+      className={cn('divide-y divide-gray-200 bg-white', className)}
+      {...props}
+    />
   );
 };
 
-export interface TableRowProps extends React.HTMLAttributes<HTMLTableRowElement> {
+export interface TableRowProps
+  extends React.HTMLAttributes<HTMLTableRowElement> {
   className?: string;
 }
 
 export const TableRow: React.FC<TableRowProps> = ({ className, ...props }) => {
-  return (
-    <tr className={cn('hover:bg-gray-50', className)} {...props} />
-  );
+  return <tr className={cn('hover:bg-gray-50', className)} {...props} />;
 };
 
-export interface TableCellProps extends React.TdHTMLAttributes<HTMLTableCellElement> {
+export interface TableCellProps
+  extends React.TdHTMLAttributes<HTMLTableCellElement> {
   className?: string;
 }
 
-export const TableCell: React.FC<TableCellProps> = ({ className, ...props }) => {
+export const TableCell: React.FC<TableCellProps> = ({
+  className,
+  ...props
+}) => {
   return (
-    <td className={cn('px-6 py-4 whitespace-nowrap text-sm text-gray-900', className)} {...props} />
+    <td
+      className={cn(
+        'px-6 py-4 text-sm whitespace-nowrap text-gray-900',
+        className
+      )}
+      {...props}
+    />
   );
 };

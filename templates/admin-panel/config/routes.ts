@@ -1,8 +1,8 @@
 export interface Route {
-  path: string
-  component: string
-  title: string
-  requiresAuth?: boolean
+  path: string;
+  component: string;
+  title: string;
+  requiresAuth?: boolean;
 }
 
 export const routes: Route[] = [
@@ -60,7 +60,7 @@ export const routes: Route[] = [
     title: 'Preferences',
     requiresAuth: true,
   },
-]
+];
 
 // To remove a route, delete the corresponding object from the array
 // Make sure to also remove the corresponding navigation item from navigation.ts

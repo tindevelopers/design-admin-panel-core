@@ -24,16 +24,16 @@ const config: Config = {
         error: designTokens.colors.error,
         info: designTokens.colors.info,
         neutral: designTokens.colors.neutral,
-        
+
         // Background colors
         background: designTokens.colors.background,
-        
+
         // Text colors
         foreground: designTokens.colors.text,
-        
+
         // Border colors
         border: designTokens.colors.border,
-        
+
         // Admin-specific colors
         admin: designTokens.colors.admin,
       },
@@ -58,17 +58,17 @@ const config: Config = {
         'elevation-4': designTokens.semanticShadows.elevation[4],
         'elevation-5': designTokens.semanticShadows.elevation[5],
         'elevation-6': designTokens.semanticShadows.elevation[6],
-        
+
         // Component shadows
-        'card': designTokens.semanticShadows.component.card,
+        card: designTokens.semanticShadows.component.card,
         'card-hover': designTokens.semanticShadows.component.cardHover,
-        'button': designTokens.semanticShadows.component.button,
+        button: designTokens.semanticShadows.component.button,
         'button-hover': designTokens.semanticShadows.component.buttonHover,
-        'dropdown': designTokens.semanticShadows.component.dropdown,
-        'modal': designTokens.semanticShadows.component.modal,
-        
+        dropdown: designTokens.semanticShadows.component.dropdown,
+        modal: designTokens.semanticShadows.component.modal,
+
         // Focus shadows
-        'focus': designTokens.semanticShadows.interactive.focus,
+        focus: designTokens.semanticShadows.interactive.focus,
         'focus-error': designTokens.semanticShadows.interactive.focusError,
         'focus-success': designTokens.semanticShadows.interactive.focusSuccess,
       },
@@ -77,20 +77,21 @@ const config: Config = {
       borderRadius: {
         ...designTokens.borderRadius,
         // Component radius aliases
-        'button': designTokens.semanticBorderRadius.component.button,
-        'input': designTokens.semanticBorderRadius.component.input,
-        'card': designTokens.semanticBorderRadius.component.card,
-        'badge': designTokens.semanticBorderRadius.component.badge,
-        'modal': designTokens.semanticBorderRadius.component.modal,
+        button: designTokens.semanticBorderRadius.component.button,
+        input: designTokens.semanticBorderRadius.component.input,
+        card: designTokens.semanticBorderRadius.component.card,
+        badge: designTokens.semanticBorderRadius.component.badge,
+        modal: designTokens.semanticBorderRadius.component.modal,
       },
 
       // Admin-specific utilities
       width: {
-        'sidebar': designTokens.semanticSpacing.admin.sidebarWidth,
-        'sidebar-collapsed': designTokens.semanticSpacing.admin.sidebarCollapsed,
+        sidebar: designTokens.semanticSpacing.admin.sidebarWidth,
+        'sidebar-collapsed':
+          designTokens.semanticSpacing.admin.sidebarCollapsed,
       },
       height: {
-        'topbar': designTokens.semanticSpacing.admin.topbarHeight,
+        topbar: designTokens.semanticSpacing.admin.topbarHeight,
       },
 
       // Animation and transitions
@@ -108,14 +109,14 @@ const config: Config = {
 
       // Custom utilities for admin layouts
       gridTemplateColumns: {
-        'admin': 'auto 1fr',
+        admin: 'auto 1fr',
         'admin-collapsed': 'auto 1fr',
       },
     },
   },
   plugins: [
     // Custom plugin for component utilities
-    function({ addUtilities, theme }) {
+    function ({ addUtilities, theme }) {
       const newUtilities = {
         // Admin layout utilities
         '.admin-layout': {
@@ -155,7 +156,7 @@ const config: Config = {
             boxShadow: theme('boxShadow.card-hover'),
           },
         },
-        
+
         // Focus utilities
         '.focus-ring': {
           '&:focus': {
@@ -176,7 +177,7 @@ const config: Config = {
           },
         },
       };
-      
+
       addUtilities(newUtilities);
     },
   ],

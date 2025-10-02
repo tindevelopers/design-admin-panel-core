@@ -1,26 +1,32 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Table, TableHeader, TableBody, TableRow, TableCell } from '../../../../components/primitives'
-import { Badge } from '../../../../components/primitives'
-import { Button } from '../../../../components/primitives'
-import { Input } from '../../../../components/primitives'
-import { PencilIcon, TrashIcon } from '@heroicons/react/24/outline'
-import Breadcrumb from '../../components/Breadcrumb'
-import Link from 'next/link'
+import { PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
+import { useState } from 'react';
+import {
+  Badge,
+  Button,
+  Input,
+  Table,
+  TableBody,
+  TableCell,
+  TableHeader,
+  TableRow,
+} from '../../../../components/primitives';
+import Breadcrumb from '../../components/Breadcrumb';
 
 interface User {
-  id: number
-  name: string
-  email: string
-  role: string
-  status: 'active' | 'inactive'
-  createdAt: string
+  id: number;
+  name: string;
+  email: string;
+  role: string;
+  status: 'active' | 'inactive';
+  createdAt: string;
 }
 
 export default function UsersList() {
-  const [searchQuery, setSearchQuery] = useState('')
-  
+  const [searchQuery, setSearchQuery] = useState('');
+
   // Sample data - replace with real data from your API
   const users: User[] = [
     {
@@ -55,23 +61,23 @@ export default function UsersList() {
       status: 'active',
       createdAt: '2024-02-10',
     },
-  ]
+  ];
 
   const filteredUsers = users.filter(
     (user) =>
       user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       user.email.toLowerCase().includes(searchQuery.toLowerCase())
-  )
+  );
 
   const handleDelete = (id: number) => {
     // Implement delete logic
-    console.log('Delete user:', id)
-  }
+    console.log('Delete user:', id);
+  };
 
   return (
     <div className="space-y-6">
       <Breadcrumb />
-      
+
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-semibold text-gray-900">Users</h1>
         <Link href="/users/create">
@@ -92,7 +98,7 @@ export default function UsersList() {
       </div>
 
       {/* Users Table */}
-      <div className="bg-white shadow-sm rounded-lg overflow-hidden">
+      <div className="overflow-hidden rounded-lg bg-white shadow-sm">
         <Table>
           <TableHeader>
             <TableRow>
@@ -117,7 +123,9 @@ export default function UsersList() {
                   <div className="text-gray-900">{user.role}</div>
                 </TableCell>
                 <TableCell>
-                  <Badge variant={user.status === 'active' ? 'success' : 'warning'}>
+                  <Badge
+                    variant={user.status === 'active' ? 'success' : 'warning'}
+                  >
                     {user.status}
                   </Badge>
                 </TableCell>
@@ -152,10 +160,14 @@ export default function UsersList() {
           Showing {filteredUsers.length} of {users.length} users
         </div>
         <div className="flex gap-2">
-          <Button variant="secondary" size="sm">Previous</Button>
-          <Button variant="secondary" size="sm">Next</Button>
+          <Button variant="secondary" size="sm">
+            Previous
+          </Button>
+          <Button variant="secondary" size="sm">
+            Next
+          </Button>
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build outputs
+dist/
+coverage/
+
+# Vendor files (third-party code)
+vendors/
+
+# Generated files
+*.min.js
+*.min.css
+
+# Documentation that shouldn't be formatted
+CHANGELOG.md
+CONTRIBUTING.md
+README.md
+PROJECT_OVERVIEW.md
+docs/
+
+# GitHub files
+.github/
+
+# Config files that have specific formatting
+rollup.config.js
+postcss.config.js
+jest.config.js

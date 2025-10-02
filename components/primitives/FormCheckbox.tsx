@@ -1,7 +1,8 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
 
-export interface FormCheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface FormCheckboxProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   helperText?: string;
   errorMessage?: string;
@@ -17,7 +18,8 @@ export const FormCheckbox: React.FC<FormCheckboxProps> = ({
   id,
   ...props
 }) => {
-  const checkboxId = id || `checkbox-${Math.random().toString(36).substr(2, 9)}`;
+  const checkboxId =
+    id || `checkbox-${Math.random().toString(36).substr(2, 9)}`;
 
   return (
     <div className="space-y-2">
@@ -33,15 +35,16 @@ export const FormCheckbox: React.FC<FormCheckboxProps> = ({
           {...props}
         />
         {label && (
-          <label htmlFor={checkboxId} className="text-sm font-medium text-gray-700">
+          <label
+            htmlFor={checkboxId}
+            className="text-sm font-medium text-gray-700"
+          >
             {label}
-            {required && <span className="text-red-500 ml-1">*</span>}
+            {required && <span className="ml-1 text-red-500">*</span>}
           </label>
         )}
       </div>
-      {errorMessage && (
-        <p className="text-sm text-red-600">{errorMessage}</p>
-      )}
+      {errorMessage && <p className="text-sm text-red-600">{errorMessage}</p>}
       {helperText && !errorMessage && (
         <p className="text-sm text-gray-500">{helperText}</p>
       )}

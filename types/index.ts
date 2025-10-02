@@ -84,7 +84,7 @@ export type DivRef = React.ElementRef<'div'>;
 export type SpanRef = React.ElementRef<'span'>;
 
 // Polymorphic component types
-export type AsChildProps<DefaultElementProps> = 
+export type AsChildProps<DefaultElementProps> =
   | ({ asChild?: false } & DefaultElementProps)
   | { asChild: true; children: React.ReactNode };
 
@@ -139,7 +139,15 @@ export interface DataTableProps<T = unknown> {
 export interface FormFieldConfig {
   name: string;
   label: string;
-  type: 'text' | 'email' | 'password' | 'number' | 'select' | 'checkbox' | 'radio' | 'textarea';
+  type:
+    | 'text'
+    | 'email'
+    | 'password'
+    | 'number'
+    | 'select'
+    | 'checkbox'
+    | 'radio'
+    | 'textarea';
   required?: boolean;
   placeholder?: string;
   helperText?: string;
@@ -206,6 +214,6 @@ export interface NotificationConfig {
 // Export all types for external use
 export type {
   ComponentSize,
-  ComponentVariant,
   ComponentState,
+  ComponentVariant,
 } from '../tokens';
