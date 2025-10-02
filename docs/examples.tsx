@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, Input, Badge } from '../components/primitives';
+import { Button, Card, CardHeader, CardContent, CardFooter, Input, Badge } from '../components/primitives';
 
 /**
  * Component Examples

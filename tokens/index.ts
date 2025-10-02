@@ -40,6 +40,4 @@ export const designTokens = {
 // Component size and variant types
 export type ComponentSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export type ComponentVariant = 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'info';
-export type ComponentState = 'default' | 'hover' | 'active' | 'disabled' | 'loading';
-export type ComponentVariant = 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'info';
 export type ComponentState = 'default' | 'hover' | 'focus' | 'active' | 'disabled';
