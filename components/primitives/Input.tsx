@@ -1,6 +1,6 @@
-import { cva, type VariantProps } from 'class-variance-authority';
-import React from 'react';
-import { cn } from '../../utils/cn';
+import { cva, type VariantProps } from 'class-variance-authority'
+import React from 'react'
+import { cn } from '../../utils/cn'
 
 // Input variants
 const inputVariants = cva(
@@ -11,8 +11,7 @@ const inputVariants = cva(
       variant: {
         default: 'border-border-primary focus:border-primary-500',
         error: 'border-error-500 focus:border-error-500 focus-ring-error',
-        success:
-          'border-success-500 focus:border-success-500 focus-ring-success',
+        success: 'border-success-500 focus:border-success-500 focus-ring-success',
       },
       size: {
         sm: 'px-2 py-1 text-sm',
@@ -25,17 +24,17 @@ const inputVariants = cva(
       size: 'md',
     },
   }
-);
+)
 
 export interface InputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
     VariantProps<typeof inputVariants> {
-  label?: string;
-  helperText?: string;
-  errorMessage?: string;
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
-  fullWidth?: boolean;
+  label?: string
+  helperText?: string
+  errorMessage?: string
+  leftIcon?: React.ReactNode
+  rightIcon?: React.ReactNode
+  fullWidth?: boolean
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
@@ -55,17 +54,14 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     },
     ref
   ) => {
-    const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
-    const hasError = variant === 'error' || !!errorMessage;
-    const actualVariant = hasError ? 'error' : variant;
+    const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`
+    const hasError = variant === 'error' || !!errorMessage
+    const actualVariant = hasError ? 'error' : variant
 
     return (
       <div className={cn('space-y-1', fullWidth ? 'w-full' : 'w-auto')}>
         {label && (
-          <label
-            htmlFor={inputId}
-            className="text-label-lg text-text-secondary block"
-          >
+          <label htmlFor={inputId} className="text-label-lg text-text-secondary block">
             {label}
           </label>
         )}
@@ -97,20 +93,15 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         </div>
 
         {(helperText || errorMessage) && (
-          <p
-            className={cn(
-              'text-label-sm',
-              hasError ? 'text-error-500' : 'text-text-muted'
-            )}
-          >
+          <p className={cn('text-label-sm', hasError ? 'text-error-500' : 'text-text-muted')}>
             {errorMessage || helperText}
           </p>
         )}
       </div>
-    );
+    )
   }
-);
+)
 
-Input.displayName = 'Input';
+Input.displayName = 'Input'
 
-export { Input, inputVariants };
+export { Input, inputVariants }

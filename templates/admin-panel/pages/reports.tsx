@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import {
   Badge,
@@ -11,8 +11,8 @@ import {
   TableCell,
   TableHeader,
   TableRow,
-} from '../../../components/primitives';
-import Breadcrumb from '../components/Breadcrumb';
+} from '../../../components/primitives'
+import Breadcrumb from '../components/Breadcrumb'
 
 export default function Reports() {
   // Sample data - replace with real data from your API
@@ -45,7 +45,7 @@ export default function Reports() {
       generatedAt: '2024-03-15',
       status: 'completed',
     },
-  ];
+  ]
 
   return (
     <div className="space-y-6">
@@ -89,9 +89,7 @@ export default function Reports() {
       {/* Reports Table */}
       <Card>
         <CardHeader>
-          <h3 className="text-lg font-semibold text-gray-900">
-            Recent Reports
-          </h3>
+          <h3 className="text-lg font-semibold text-gray-900">Recent Reports</h3>
         </CardHeader>
         <CardContent>
           <Table>
@@ -108,9 +106,7 @@ export default function Reports() {
               {reports.map((report) => (
                 <TableRow key={report.id}>
                   <TableCell>
-                    <div className="font-medium text-gray-900">
-                      {report.name}
-                    </div>
+                    <div className="font-medium text-gray-900">{report.name}</div>
                   </TableCell>
                   <TableCell>
                     <div className="text-gray-500">{report.type}</div>
@@ -148,5 +144,5 @@ export default function Reports() {
         </CardContent>
       </Card>
     </div>
-  );
+  )
 }

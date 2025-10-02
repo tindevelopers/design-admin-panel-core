@@ -1,7 +1,7 @@
-'use client';
+'use client'
 
-import { useParams, useRouter } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import { useParams, useRouter } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
 import {
   Button,
   Card,
@@ -9,20 +9,20 @@ import {
   CardHeader,
   FormInput,
   FormSelect,
-} from '../../../../components/primitives';
-import Breadcrumb from '../../components/Breadcrumb';
+} from '../../../../components/primitives'
+import Breadcrumb from '../../components/Breadcrumb'
 
 export default function EditUser() {
-  const router = useRouter();
-  const params = useParams();
-  const userId = params.id;
+  const router = useRouter()
+  const params = useParams()
+  const userId = params.id
 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     role: 'user',
     status: 'active',
-  });
+  })
 
   useEffect(() => {
     // Fetch user data - replace with real API call
@@ -33,23 +33,23 @@ export default function EditUser() {
         email: 'john.doe@example.com',
         role: 'admin',
         status: 'active',
-      };
-      setFormData(userData);
-    };
+      }
+      setFormData(userData)
+    }
 
-    fetchUser();
-  }, [userId]);
+    fetchUser()
+  }, [userId])
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     // Implement update user logic
-    console.log('Update user:', userId, formData);
-    router.push('/users');
-  };
+    console.log('Update user:', userId, formData)
+    router.push('/users')
+  }
 
   const handleChange = (field: string, value: unknown) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-  };
+    setFormData((prev) => ({ ...prev, [field]: value }))
+  }
 
   return (
     <div className="space-y-6">
@@ -61,9 +61,7 @@ export default function EditUser() {
 
       <Card>
         <CardHeader>
-          <h3 className="text-lg font-semibold text-gray-900">
-            User Information
-          </h3>
+          <h3 className="text-lg font-semibold text-gray-900">User Information</h3>
           <p className="text-sm text-gray-500">Update user details</p>
         </CardHeader>
         <CardContent>
@@ -114,11 +112,7 @@ export default function EditUser() {
               <Button type="submit" variant="primary">
                 Save Changes
               </Button>
-              <Button
-                type="button"
-                variant="secondary"
-                onClick={() => router.push('/users')}
-              >
+              <Button type="button" variant="secondary" onClick={() => router.push('/users')}>
                 Cancel
               </Button>
             </div>
@@ -126,5 +120,5 @@ export default function EditUser() {
         </CardContent>
       </Card>
     </div>
-  );
+  )
 }

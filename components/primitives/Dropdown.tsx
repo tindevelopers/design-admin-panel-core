@@ -1,12 +1,12 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { cn } from '../../utils/cn';
+import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { cn } from '../../utils/cn'
 
 export interface DropdownProps extends React.HTMLAttributes<HTMLDivElement> {
-  trigger: React.ReactNode;
-  children: React.ReactNode;
-  align?: 'left' | 'right';
-  open?: boolean;
-  onOpenChange?: (open: boolean) => void;
+  trigger: React.ReactNode
+  children: React.ReactNode
+  align?: 'left' | 'right'
+  open?: boolean
+  onOpenChange?: (open: boolean) => void
 }
 
 export const Dropdown: React.FC<DropdownProps> = ({
@@ -18,39 +18,36 @@ export const Dropdown: React.FC<DropdownProps> = ({
   className,
   ...props
 }) => {
-  const [internalOpen, setInternalOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [internalOpen, setInternalOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
-  const isOpen = controlledOpen !== undefined ? controlledOpen : internalOpen;
+  const isOpen = controlledOpen !== undefined ? controlledOpen : internalOpen
 
   const handleOpenChange = useCallback(
     (newOpen: boolean) => {
       if (controlledOpen === undefined) {
-        setInternalOpen(newOpen);
+        setInternalOpen(newOpen)
       }
-      onOpenChange?.(newOpen);
+      onOpenChange?.(newOpen)
     },
     [controlledOpen, onOpenChange]
-  );
+  )
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        handleOpenChange(false);
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        handleOpenChange(false)
       }
-    };
+    }
 
     if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside)
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isOpen, handleOpenChange]);
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isOpen, handleOpenChange])
 
   return (
     <div className={cn('relative', className)} ref={dropdownRef} {...props}>
@@ -66,7 +63,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-Dropdown.displayName = 'Dropdown';
+Dropdown.displayName = 'Dropdown'

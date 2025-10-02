@@ -1,11 +1,11 @@
-'use client';
+'use client'
 
 import {
   ArrowTrendingUpIcon,
   BoltIcon,
   CreditCardIcon,
   UsersIcon,
-} from '@heroicons/react/24/outline';
+} from '@heroicons/react/24/outline'
 import {
   Button,
   Card,
@@ -14,7 +14,7 @@ import {
   CardHeader,
   ChartOne,
   ChartThree,
-} from '../../../components/primitives';
+} from '../../../components/primitives'
 
 export default function SaaSDashboard() {
   const mrrData = [
@@ -24,7 +24,7 @@ export default function SaaSDashboard() {
     { month: 'Apr', value: 61000 },
     { month: 'May', value: 67000 },
     { month: 'Jun', value: 72000 },
-  ];
+  ]
 
   const churnData = [
     { month: 'Jan', rate: 3.2 },
@@ -33,7 +33,7 @@ export default function SaaSDashboard() {
     { month: 'Apr', rate: 2.9 },
     { month: 'May', rate: 2.3 },
     { month: 'Jun', rate: 2.1 },
-  ];
+  ]
 
   return (
     <div className="space-y-6">
@@ -62,9 +62,7 @@ export default function SaaSDashboard() {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <Card>
           <CardHeader>
-            <h3 className="text-lg font-semibold text-gray-900">
-              Monthly Recurring Revenue
-            </h3>
+            <h3 className="text-lg font-semibold text-gray-900">Monthly Recurring Revenue</h3>
           </CardHeader>
           <CardContent>
             <ChartOne data={mrrData} />
@@ -81,5 +79,5 @@ export default function SaaSDashboard() {
         </Card>
       </div>
     </div>
-  );
+  )
 }

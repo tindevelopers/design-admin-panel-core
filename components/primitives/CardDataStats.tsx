@@ -1,14 +1,14 @@
-import React from 'react';
-import { cn } from '../../utils/cn';
+import React from 'react'
+import { cn } from '../../utils/cn'
 
 export interface CardDataStatsProps {
-  title: string;
-  total: string;
-  rate: string;
-  levelUp?: boolean;
-  levelDown?: boolean;
-  children?: React.ReactNode;
-  className?: string;
+  title: string
+  total: string
+  rate: string
+  levelUp?: boolean
+  levelDown?: boolean
+  children?: React.ReactNode
+  className?: string
 }
 
 export const CardDataStats: React.FC<CardDataStatsProps> = ({
@@ -21,12 +21,7 @@ export const CardDataStats: React.FC<CardDataStatsProps> = ({
   className,
 }) => {
   return (
-    <div
-      className={cn(
-        'rounded-lg border border-gray-200 bg-white p-6 shadow-sm',
-        className
-      )}
-    >
+    <div className={cn('rounded-lg border border-gray-200 bg-white p-6 shadow-sm', className)}>
       <div className="flex items-center justify-between">
         <div>
           <p className="text-sm font-medium text-gray-600">{title}</p>
@@ -81,5 +76,5 @@ export const CardDataStats: React.FC<CardDataStatsProps> = ({
         )}
       </div>
     </div>
-  );
-};
+  )
+}

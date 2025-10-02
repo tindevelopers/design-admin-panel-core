@@ -33,6 +33,7 @@ export default [
       typescript({
         tsconfig: './tsconfig.json',
         exclude: ['**/*.test.tsx', '**/*.test.ts', '**/*.stories.tsx'],
+        jsx: 'react-jsx',
       }),
       postcss({
         config: {

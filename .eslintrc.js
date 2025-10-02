@@ -30,4 +30,4 @@ module.exports = {
     es2024: true,
     node: true,
   },
-};
+}

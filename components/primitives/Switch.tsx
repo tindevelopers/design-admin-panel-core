@@ -1,12 +1,11 @@
-import React from 'react';
-import { cn } from '../../utils/cn';
+import React from 'react'
+import { cn } from '../../utils/cn'
 
-export interface SwitchProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  helperText?: string;
-  errorMessage?: string;
-  required?: boolean;
+export interface SwitchProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  label?: string
+  helperText?: string
+  errorMessage?: string
+  required?: boolean
 }
 
 export const Switch: React.FC<SwitchProps> = ({
@@ -18,7 +17,7 @@ export const Switch: React.FC<SwitchProps> = ({
   id,
   ...props
 }) => {
-  const switchId = id || `switch-${Math.random().toString(36).substr(2, 9)}`;
+  const switchId = id || `switch-${Math.random().toString(36).substr(2, 9)}`
 
   return (
     <div className="space-y-2">
@@ -41,21 +40,16 @@ export const Switch: React.FC<SwitchProps> = ({
           </label>
         </div>
         {label && (
-          <label
-            htmlFor={switchId}
-            className="text-sm font-medium text-gray-700"
-          >
+          <label htmlFor={switchId} className="text-sm font-medium text-gray-700">
             {label}
             {required && <span className="ml-1 text-red-500">*</span>}
           </label>
         )}
       </div>
       {errorMessage && <p className="text-sm text-red-600">{errorMessage}</p>}
-      {helperText && !errorMessage && (
-        <p className="text-sm text-gray-500">{helperText}</p>
-      )}
+      {helperText && !errorMessage && <p className="text-sm text-gray-500">{helperText}</p>}
     </div>
-  );
-};
+  )
+}
 
-Switch.displayName = 'Switch';
+Switch.displayName = 'Switch'

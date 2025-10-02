@@ -1,11 +1,10 @@
-import React from 'react';
-import { cn } from '../../utils/cn';
+import React from 'react'
+import { cn } from '../../utils/cn'
 
-export interface DropdownItemProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
-  icon?: React.ReactNode;
-  destructive?: boolean;
+export interface DropdownItemProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode
+  icon?: React.ReactNode
+  destructive?: boolean
 }
 
 export const DropdownItem: React.FC<DropdownItemProps> = ({
@@ -27,7 +26,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = ({
       {icon && <span className="mr-3 h-4 w-4">{icon}</span>}
       {children}
     </button>
-  );
-};
+  )
+}
 
-DropdownItem.displayName = 'DropdownItem';
+DropdownItem.displayName = 'DropdownItem'

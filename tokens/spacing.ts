@@ -40,7 +40,7 @@ export const spacing = {
   72: '18rem', // 288px
   80: '20rem', // 320px
   96: '24rem', // 384px
-} as const;
+} as const
 
 // Semantic spacing tokens
 export const semanticSpacing = {
@@ -83,7 +83,7 @@ export const semanticSpacing = {
     cardPadding: spacing[6], // 24px
     cardGap: spacing[6], // 24px
   },
-} as const;
+} as const
 
-export type SpacingToken = keyof typeof spacing;
-export type SemanticSpacingToken = keyof typeof semanticSpacing;
+export type SpacingToken = keyof typeof spacing
+export type SemanticSpacingToken = keyof typeof semanticSpacing

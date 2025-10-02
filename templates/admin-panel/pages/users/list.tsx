@@ -1,8 +1,8 @@
-'use client';
+'use client'
 
-import { PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
-import { useState } from 'react';
+import { PencilIcon, TrashIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
+import { useState } from 'react'
 import {
   Badge,
   Button,
@@ -12,20 +12,20 @@ import {
   TableCell,
   TableHeader,
   TableRow,
-} from '../../../../components/primitives';
-import Breadcrumb from '../../components/Breadcrumb';
+} from '../../../../components/primitives'
+import Breadcrumb from '../../components/Breadcrumb'
 
 interface User {
-  id: number;
-  name: string;
-  email: string;
-  role: string;
-  status: 'active' | 'inactive';
-  createdAt: string;
+  id: number
+  name: string
+  email: string
+  role: string
+  status: 'active' | 'inactive'
+  createdAt: string
 }
 
 export default function UsersList() {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState('')
 
   // Sample data - replace with real data from your API
   const users: User[] = [
@@ -61,18 +61,18 @@ export default function UsersList() {
       status: 'active',
       createdAt: '2024-02-10',
     },
-  ];
+  ]
 
   const filteredUsers = users.filter(
     (user) =>
       user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       user.email.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  )
 
   const handleDelete = (id: number) => {
     // Implement delete logic
-    console.log('Delete user:', id);
-  };
+    console.log('Delete user:', id)
+  }
 
   return (
     <div className="space-y-6">
@@ -123,9 +123,7 @@ export default function UsersList() {
                   <div className="text-gray-900">{user.role}</div>
                 </TableCell>
                 <TableCell>
-                  <Badge
-                    variant={user.status === 'active' ? 'success' : 'warning'}
-                  >
+                  <Badge variant={user.status === 'active' ? 'success' : 'warning'}>
                     {user.status}
                   </Badge>
                 </TableCell>
@@ -139,11 +137,7 @@ export default function UsersList() {
                         <PencilIcon className="h-4 w-4" />
                       </Button>
                     </Link>
-                    <Button
-                      size="sm"
-                      variant="danger"
-                      onClick={() => handleDelete(user.id)}
-                    >
+                    <Button size="sm" variant="danger" onClick={() => handleDelete(user.id)}>
                       <TrashIcon className="h-4 w-4" />
                     </Button>
                   </div>
@@ -169,5 +163,5 @@ export default function UsersList() {
         </div>
       </div>
     </div>
-  );
+  )
 }

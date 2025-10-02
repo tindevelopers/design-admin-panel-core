@@ -1,16 +1,14 @@
-import { Button } from '../components/primitives/Button';
-import { Card } from '../components/primitives/Card';
-import { Badge } from '../components/primitives/Badge';
+import { Badge } from '../components/primitives/Badge'
+import { Button } from '../components/primitives/Button'
+import { Card } from '../components/primitives/Card'
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50 py-8">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Design Admin Panel Core
-          </h1>
-          <p className="text-lg text-gray-600 mb-6">
+        <div className="mb-8 text-center">
+          <h1 className="mb-4 text-4xl font-bold text-gray-900">Design Admin Panel Core</h1>
+          <p className="mb-6 text-lg text-gray-600">
             A comprehensive design system for building modern frontend websites
           </p>
           <Badge variant="primary" size="lg">
@@ -18,10 +16,10 @@ export default function Home() {
           </Badge>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           <Card className="p-6">
-            <h2 className="text-xl font-semibold mb-3">Components</h2>
-            <p className="text-gray-600 mb-4">
+            <h2 className="mb-3 text-xl font-semibold">Components</h2>
+            <p className="mb-4 text-gray-600">
               Pre-built React components with TypeScript support and Tailwind CSS styling.
             </p>
             <Button variant="primary" size="sm">
@@ -30,8 +28,8 @@ export default function Home() {
           </Card>
 
           <Card className="p-6">
-            <h2 className="text-xl font-semibold mb-3">Templates</h2>
-            <p className="text-gray-600 mb-4">
+            <h2 className="mb-3 text-xl font-semibold">Templates</h2>
+            <p className="mb-4 text-gray-600">
               Ready-to-use admin panel templates and dashboard layouts.
             </p>
             <Button variant="secondary" size="sm">
@@ -40,8 +38,8 @@ export default function Home() {
           </Card>
 
           <Card className="p-6">
-            <h2 className="text-xl font-semibold mb-3">Design Tokens</h2>
-            <p className="text-gray-600 mb-4">
+            <h2 className="mb-3 text-xl font-semibold">Design Tokens</h2>
+            <p className="mb-4 text-gray-600">
               Consistent design tokens for colors, typography, spacing, and more.
             </p>
             <Button variant="success" size="sm">
@@ -57,5 +55,5 @@ export default function Home() {
         </div>
       </div>
     </main>
-  );
+  )
 }

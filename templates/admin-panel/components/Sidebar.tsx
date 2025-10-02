@@ -1,26 +1,22 @@
-'use client';
+'use client'
 
-import { Dialog, Transition } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import clsx from 'clsx';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Fragment, useState } from 'react';
-import { navigation } from '../config/navigation';
+import { Dialog, Transition } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import clsx from 'clsx'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { Fragment, useState } from 'react'
+import { navigation } from '../config/navigation'
 
 export default function Sidebar() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const pathname = usePathname();
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <>
       {/* Mobile sidebar */}
       <Transition.Root show={sidebarOpen} as={Fragment}>
-        <Dialog
-          as="div"
-          className="relative z-50 lg:hidden"
-          onClose={setSidebarOpen}
-        >
+        <Dialog as="div" className="relative z-50 lg:hidden" onClose={setSidebarOpen}>
           <Transition.Child
             as={Fragment}
             enter="transition-opacity ease-linear duration-300"
@@ -60,18 +56,13 @@ export default function Sidebar() {
                       onClick={() => setSidebarOpen(false)}
                     >
                       <span className="sr-only">Close sidebar</span>
-                      <XMarkIcon
-                        className="h-6 w-6 text-white"
-                        aria-hidden="true"
-                      />
+                      <XMarkIcon className="h-6 w-6 text-white" aria-hidden="true" />
                     </button>
                   </div>
                 </Transition.Child>
                 <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
                   <div className="flex h-16 shrink-0 items-center">
-                    <h1 className="text-xl font-bold text-gray-900">
-                      Admin Panel
-                    </h1>
+                    <h1 className="text-xl font-bold text-gray-900">Admin Panel</h1>
                   </div>
                   <nav className="flex flex-1 flex-col">
                     <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -173,10 +164,8 @@ export default function Sidebar() {
           <span className="sr-only">Open sidebar</span>
           <Bars3Icon className="h-6 w-6" aria-hidden="true" />
         </button>
-        <div className="flex-1 text-sm leading-6 font-semibold text-gray-900">
-          Admin Panel
-        </div>
+        <div className="flex-1 text-sm leading-6 font-semibold text-gray-900">Admin Panel</div>
       </div>
     </>
-  );
+  )
 }

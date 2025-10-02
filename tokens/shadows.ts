@@ -15,15 +15,11 @@ export const shadows = {
   inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
 
   // Colored shadows
-  primary:
-    '0 4px 6px -1px rgb(59 130 246 / 0.15), 0 2px 4px -2px rgb(59 130 246 / 0.15)',
-  success:
-    '0 4px 6px -1px rgb(34 197 94 / 0.15), 0 2px 4px -2px rgb(34 197 94 / 0.15)',
-  warning:
-    '0 4px 6px -1px rgb(245 158 11 / 0.15), 0 2px 4px -2px rgb(245 158 11 / 0.15)',
-  error:
-    '0 4px 6px -1px rgb(239 68 68 / 0.15), 0 2px 4px -2px rgb(239 68 68 / 0.15)',
-} as const;
+  primary: '0 4px 6px -1px rgb(59 130 246 / 0.15), 0 2px 4px -2px rgb(59 130 246 / 0.15)',
+  success: '0 4px 6px -1px rgb(34 197 94 / 0.15), 0 2px 4px -2px rgb(34 197 94 / 0.15)',
+  warning: '0 4px 6px -1px rgb(245 158 11 / 0.15), 0 2px 4px -2px rgb(245 158 11 / 0.15)',
+  error: '0 4px 6px -1px rgb(239 68 68 / 0.15), 0 2px 4px -2px rgb(239 68 68 / 0.15)',
+} as const
 
 // Semantic shadow tokens
 export const semanticShadows = {
@@ -64,7 +60,7 @@ export const semanticShadows = {
     cardHover: shadows.md,
     floatingPanel: shadows.xl,
   },
-} as const;
+} as const
 
-export type ShadowToken = keyof typeof shadows;
-export type SemanticShadowToken = keyof typeof semanticShadows;
+export type ShadowToken = keyof typeof shadows
+export type SemanticShadowToken = keyof typeof semanticShadows

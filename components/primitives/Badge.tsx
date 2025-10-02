@@ -1,6 +1,6 @@
-import { cva, type VariantProps } from 'class-variance-authority';
-import React from 'react';
-import { cn } from '../../utils/cn';
+import { cva, type VariantProps } from 'class-variance-authority'
+import React from 'react'
+import { cn } from '../../utils/cn'
 
 // Badge variants
 const badgeVariants = cva(
@@ -10,16 +10,14 @@ const badgeVariants = cva(
     variants: {
       variant: {
         primary: 'bg-primary-100 text-primary-800 border border-primary-200',
-        secondary:
-          'bg-secondary-100 text-secondary-800 border border-secondary-200',
+        secondary: 'bg-secondary-100 text-secondary-800 border border-secondary-200',
         success: 'bg-success-100 text-success-800 border border-success-200',
         warning: 'bg-warning-100 text-warning-800 border border-warning-200',
         error: 'bg-error-100 text-error-800 border border-error-200',
         danger: 'bg-red-100 text-red-800 border border-red-200',
         info: 'bg-info-100 text-info-800 border border-info-200',
         neutral: 'bg-neutral-100 text-neutral-800 border border-neutral-200',
-        outline:
-          'border border-border-primary text-text-secondary bg-transparent',
+        outline: 'border border-border-primary text-text-secondary bg-transparent',
       },
       size: {
         sm: 'px-1.5 py-0.5 text-xs',
@@ -37,37 +35,23 @@ const badgeVariants = cva(
       dot: false,
     },
   }
-);
+)
 
 export interface BadgeProps
   extends React.HTMLAttributes<HTMLSpanElement>,
     VariantProps<typeof badgeVariants> {
-  icon?: React.ReactNode;
-  removable?: boolean;
-  onRemove?: () => void;
+  icon?: React.ReactNode
+  removable?: boolean
+  onRemove?: () => void
 }
 
 const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
   (
-    {
-      className,
-      variant,
-      size,
-      dot,
-      icon,
-      removable = false,
-      onRemove,
-      children,
-      ...props
-    },
+    { className, variant, size, dot, icon, removable = false, onRemove, children, ...props },
     ref
   ) => {
     return (
-      <span
-        className={cn(badgeVariants({ variant, size, dot, className }))}
-        ref={ref}
-        {...props}
-      >
+      <span className={cn(badgeVariants({ variant, size, dot, className }))} ref={ref} {...props}>
         {dot && (
           <span
             className={cn(
@@ -113,10 +97,10 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
           </button>
         )}
       </span>
-    );
+    )
   }
-);
+)
 
-Badge.displayName = 'Badge';
+Badge.displayName = 'Badge'
 
-export { Badge, badgeVariants };
+export { Badge, badgeVariants }

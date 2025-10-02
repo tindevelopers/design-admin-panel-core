@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ES6"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ES6"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -39,11 +35,5 @@
     "utils/**/*",
     ".next/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "**/*.stories.tsx"
-  ]
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx", "**/*.stories.tsx"]
 }

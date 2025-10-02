@@ -13,7 +13,7 @@ export const borderRadius = {
   '2xl': '1rem', // 16px
   '3xl': '1.5rem', // 24px
   full: '9999px',
-} as const;
+} as const
 
 // Semantic border radius tokens
 export const semanticBorderRadius = {
@@ -36,7 +36,7 @@ export const semanticBorderRadius = {
     input: borderRadius.md,
     badge: borderRadius.full,
   },
-} as const;
+} as const
 
-export type BorderRadiusToken = keyof typeof borderRadius;
-export type SemanticBorderRadiusToken = keyof typeof semanticBorderRadius;
+export type BorderRadiusToken = keyof typeof borderRadius
+export type SemanticBorderRadiusToken = keyof typeof semanticBorderRadius

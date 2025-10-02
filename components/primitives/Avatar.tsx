@@ -1,11 +1,11 @@
-import React from 'react';
-import { cn } from '../../utils/cn';
+import React from 'react'
+import { cn } from '../../utils/cn'
 
 export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
-  src?: string;
-  alt?: string;
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  fallback?: string;
+  src?: string
+  alt?: string
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+  fallback?: string
 }
 
 const sizeClasses = {
@@ -14,7 +14,7 @@ const sizeClasses = {
   md: 'h-10 w-10 text-base',
   lg: 'h-12 w-12 text-lg',
   xl: 'h-16 w-16 text-xl',
-};
+}
 
 export const Avatar: React.FC<AvatarProps> = ({
   src,
@@ -35,16 +35,12 @@ export const Avatar: React.FC<AvatarProps> = ({
       {...props}
     >
       {src ? (
-        <img
-          src={src}
-          alt={alt}
-          className="h-full w-full rounded-full object-cover"
-        />
+        <img src={src} alt={alt} className="h-full w-full rounded-full object-cover" />
       ) : (
         <span className="font-medium">{fallback || children || '?'}</span>
       )}
     </div>
-  );
-};
+  )
+}
 
-Avatar.displayName = 'Avatar';
+Avatar.displayName = 'Avatar'

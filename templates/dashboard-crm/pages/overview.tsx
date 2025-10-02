@@ -1,11 +1,11 @@
-'use client';
+'use client'
 
 import {
   BriefcaseIcon,
   CurrencyDollarIcon,
   PhoneIcon,
   UsersIcon,
-} from '@heroicons/react/24/outline';
+} from '@heroicons/react/24/outline'
 import {
   Badge,
   Button,
@@ -19,7 +19,7 @@ import {
   TableCell,
   TableHeader,
   TableRow,
-} from '../../../components/primitives';
+} from '../../../components/primitives'
 
 export default function CRMDashboard() {
   const salesPipeline = [
@@ -27,7 +27,7 @@ export default function CRMDashboard() {
     { stage: 'Qualified', value: 30, count: 80 },
     { stage: 'Proposal', value: 15, count: 40 },
     { stage: 'Closed', value: 10, count: 25 },
-  ];
+  ]
 
   const recentDeals = [
     {
@@ -54,7 +54,7 @@ export default function CRMDashboard() {
       stage: 'Proposal',
       probability: 80,
     },
-  ];
+  ]
 
   const recentActivities = [
     {
@@ -75,7 +75,7 @@ export default function CRMDashboard() {
       company: 'Global Solutions',
       time: '2 hours ago',
     },
-  ];
+  ]
 
   return (
     <div className="space-y-6">
@@ -95,12 +95,7 @@ export default function CRMDashboard() {
         <CardDataStats title="Active Deals" total="48" rate="8.3%" levelUp>
           <BriefcaseIcon className="h-6 w-6" />
         </CardDataStats>
-        <CardDataStats
-          title="Pipeline Value"
-          total="$2.4M"
-          rate="15.2%"
-          levelUp
-        >
+        <CardDataStats title="Pipeline Value" total="$2.4M" rate="15.2%" levelUp>
           <CurrencyDollarIcon className="h-6 w-6" />
         </CardDataStats>
         <CardDataStats title="Calls Today" total="32" rate="5.1%" levelUp>
@@ -112,9 +107,7 @@ export default function CRMDashboard() {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <Card>
           <CardHeader>
-            <h3 className="text-lg font-semibold text-gray-900">
-              Sales Pipeline
-            </h3>
+            <h3 className="text-lg font-semibold text-gray-900">Sales Pipeline</h3>
           </CardHeader>
           <CardContent>
             <ChartFour data={salesPipeline} />
@@ -123,9 +116,7 @@ export default function CRMDashboard() {
 
         <Card>
           <CardHeader>
-            <h3 className="text-lg font-semibold text-gray-900">
-              Recent Activities
-            </h3>
+            <h3 className="text-lg font-semibold text-gray-900">Recent Activities</h3>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -135,9 +126,7 @@ export default function CRMDashboard() {
                   className="flex items-start gap-3 border-b border-gray-200 pb-3 last:border-0"
                 >
                   <div className="flex-1">
-                    <p className="text-sm font-medium text-gray-900">
-                      {activity.contact}
-                    </p>
+                    <p className="text-sm font-medium text-gray-900">{activity.contact}</p>
                     <p className="text-sm text-gray-500">
                       {activity.company} • {activity.type}
                     </p>
@@ -191,5 +180,5 @@ export default function CRMDashboard() {
         </CardContent>
       </Card>
     </div>
-  );
+  )
 }

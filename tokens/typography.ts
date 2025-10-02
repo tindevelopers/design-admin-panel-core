@@ -85,7 +85,7 @@ export const typography = {
     wider: '0.05em',
     widest: '0.1em',
   },
-} as const;
+} as const
 
 // Semantic typography scales
 export const textStyles = {
@@ -213,7 +213,7 @@ export const textStyles = {
       fontWeight: typography.fontWeight.normal,
     },
   },
-} as const;
+} as const
 
-export type TypographyToken = keyof typeof typography;
-export type TextStyle = keyof typeof textStyles;
+export type TypographyToken = keyof typeof typography
+export type TextStyle = keyof typeof textStyles

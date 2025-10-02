@@ -143,7 +143,7 @@ export const colors = {
     card: '#ffffff',
     hover: '#f1f5f9',
   },
-} as const;
+} as const
 
 // Semantic color mappings
 export const semanticColors = {
@@ -153,7 +153,7 @@ export const semanticColors = {
   warning: colors.warning[500],
   error: colors.error[500],
   info: colors.info[500],
-} as const;
+} as const
 
-export type ColorToken = keyof typeof colors;
-export type SemanticColor = keyof typeof semanticColors;
+export type ColorToken = keyof typeof colors
+export type SemanticColor = keyof typeof semanticColors

@@ -1,6 +1,6 @@
-import { cva, type VariantProps } from 'class-variance-authority';
-import React from 'react';
-import { cn } from '../../utils/cn';
+import { cva, type VariantProps } from 'class-variance-authority'
+import React from 'react'
+import { cn } from '../../utils/cn'
 
 // Button variants using class-variance-authority
 const buttonVariants = cva(
@@ -15,12 +15,9 @@ const buttonVariants = cva(
           'bg-secondary-100 text-secondary-900 hover:bg-secondary-200 active:bg-secondary-300 border border-secondary-300',
         outline:
           'border border-primary-500 text-primary-500 hover:bg-primary-50 active:bg-primary-100',
-        ghost:
-          'text-secondary-700 hover:bg-secondary-100 active:bg-secondary-200',
-        success:
-          'bg-success-500 text-white hover:bg-success-600 active:bg-success-700',
-        warning:
-          'bg-warning-500 text-white hover:bg-warning-600 active:bg-warning-700',
+        ghost: 'text-secondary-700 hover:bg-secondary-100 active:bg-secondary-200',
+        success: 'bg-success-500 text-white hover:bg-success-600 active:bg-success-700',
+        warning: 'bg-warning-500 text-white hover:bg-warning-600 active:bg-warning-700',
         error: 'bg-error-500 text-white hover:bg-error-600 active:bg-error-700',
         danger:
           'bg-red-500 text-white hover:bg-red-600 active:bg-red-700 shadow-button hover:shadow-button-hover',
@@ -44,15 +41,15 @@ const buttonVariants = cva(
       fullWidth: false,
     },
   }
-);
+)
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-  loading?: boolean;
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
+  asChild?: boolean
+  loading?: boolean
+  leftIcon?: React.ReactNode
+  rightIcon?: React.ReactNode
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -72,7 +69,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const isDisabled = disabled || loading;
+    const isDisabled = disabled || loading
 
     return (
       <button
@@ -107,10 +104,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {children}
         {!loading && rightIcon && <span className="ml-2">{rightIcon}</span>}
       </button>
-    );
+    )
   }
-);
+)
 
-Button.displayName = 'Button';
+Button.displayName = 'Button'
 
-export { Button, buttonVariants };
+export { Button, buttonVariants }

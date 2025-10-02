@@ -4,15 +4,15 @@ import {
   DocumentTextIcon,
   HomeIcon,
   UsersIcon,
-} from '@heroicons/react/24/outline';
-import React from 'react';
+} from '@heroicons/react/24/outline'
+import React from 'react'
 
 export interface NavigationItem {
-  name: string;
-  href: string;
-  icon: React.ComponentType<{ className?: string }>;
-  badge?: string;
-  children?: NavigationItem[];
+  name: string
+  href: string
+  icon: React.ComponentType<{ className?: string }>
+  badge?: string
+  children?: NavigationItem[]
 }
 
 export const navigation: NavigationItem[] = [
@@ -55,7 +55,7 @@ export const navigation: NavigationItem[] = [
       },
     ],
   },
-];
+]
 
 // To remove a menu item, simply delete or comment out the corresponding object
 // Example: To remove Analytics, delete the Analytics object from the array

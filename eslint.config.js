@@ -1,18 +1,11 @@
-import js from '@eslint/js';
-import typescript from '@typescript-eslint/eslint-plugin';
-import typescriptParser from '@typescript-eslint/parser';
+import js from '@eslint/js'
+import typescript from '@typescript-eslint/eslint-plugin'
+import typescriptParser from '@typescript-eslint/parser'
 
 export default [
   js.configs.recommended,
   {
-    ignores: [
-      'node_modules/**',
-      '.next/**',
-      'dist/**',
-      'vendors/**',
-      'build/**',
-      '**/*.d.ts',
-    ],
+    ignores: ['node_modules/**', '.next/**', 'dist/**', 'vendors/**', 'build/**', '**/*.d.ts'],
   },
   {
     files: ['**/*.js'],
@@ -81,4 +74,4 @@ export default [
       'no-console': 'warn',
     },
   },
-];
+]

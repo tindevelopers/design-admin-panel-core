@@ -1,6 +1,6 @@
-import { cva, type VariantProps } from 'class-variance-authority';
-import React from 'react';
-import { cn } from '../../utils/cn';
+import { cva, type VariantProps } from 'class-variance-authority'
+import React from 'react'
+import { cn } from '../../utils/cn'
 
 // Card variants
 const cardVariants = cva(
@@ -31,46 +31,40 @@ const cardVariants = cva(
       hover: false,
     },
   }
-);
+)
 
 export interface CardProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof cardVariants> {
-  asChild?: boolean;
+  asChild?: boolean
 }
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  (
-    { className, variant, padding, hover, asChild: _asChild = false, ...props },
-    ref
-  ) => {
+  ({ className, variant, padding, hover, asChild: _asChild = false, ...props }, ref) => {
     return (
       <div
         className={cn(cardVariants({ variant, padding, hover, className }))}
         ref={ref}
         {...props}
       />
-    );
+    )
   }
-);
+)
 
-Card.displayName = 'Card';
+Card.displayName = 'Card'
 
 // Card Header component
 export interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
-  title?: string;
-  subtitle?: string;
-  action?: React.ReactNode;
+  title?: string
+  subtitle?: string
+  action?: React.ReactNode
 }
 
 const CardHeader = React.forwardRef<HTMLDivElement, CardHeaderProps>(
   ({ className, title, subtitle, action, children, ...props }, ref) => {
     return (
       <div
-        className={cn(
-          'flex items-start justify-between space-y-1.5 pb-4',
-          className
-        )}
+        className={cn('flex items-start justify-between space-y-1.5 pb-4', className)}
         ref={ref}
         {...props}
       >
@@ -80,30 +74,27 @@ const CardHeader = React.forwardRef<HTMLDivElement, CardHeaderProps>(
               {title}
             </h3>
           )}
-          {subtitle && (
-            <p className="text-body-sm text-text-secondary">{subtitle}</p>
-          )}
+          {subtitle && <p className="text-body-sm text-text-secondary">{subtitle}</p>}
           {children}
         </div>
         {action && <div className="flex items-center space-x-2">{action}</div>}
       </div>
-    );
+    )
   }
-);
+)
 
-CardHeader.displayName = 'CardHeader';
+CardHeader.displayName = 'CardHeader'
 
 // Card Content component
-export interface CardContentProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export interface CardContentProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const CardContent = React.forwardRef<HTMLDivElement, CardContentProps>(
   ({ className, ...props }, ref) => {
-    return <div className={cn('space-y-4', className)} ref={ref} {...props} />;
+    return <div className={cn('space-y-4', className)} ref={ref} {...props} />
   }
-);
+)
 
-CardContent.displayName = 'CardContent';
+CardContent.displayName = 'CardContent'
 
 // Card Footer component
 export interface CardFooterProps extends React.HTMLAttributes<HTMLDivElement> {}
@@ -119,21 +110,19 @@ const CardFooter = React.forwardRef<HTMLDivElement, CardFooterProps>(
         ref={ref}
         {...props}
       />
-    );
+    )
   }
-);
+)
 
-CardFooter.displayName = 'CardFooter';
+CardFooter.displayName = 'CardFooter'
 
 // Card Body component (alias for CardContent for compatibility)
 export interface CardBodyProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-const CardBody = React.forwardRef<HTMLDivElement, CardBodyProps>(
-  ({ className, ...props }, ref) => {
-    return <div className={cn('space-y-4', className)} ref={ref} {...props} />;
-  }
-);
+const CardBody = React.forwardRef<HTMLDivElement, CardBodyProps>(({ className, ...props }, ref) => {
+  return <div className={cn('space-y-4', className)} ref={ref} {...props} />
+})
 
-CardBody.displayName = 'CardBody';
+CardBody.displayName = 'CardBody'
 
-export { Card, CardBody, CardContent, CardFooter, CardHeader, cardVariants };
+export { Card, CardBody, CardContent, CardFooter, CardHeader, cardVariants }
