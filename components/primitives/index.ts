@@ -29,3 +29,6 @@ export type { ChartThreeProps } from './ChartThree';
 
 export { ChartFour } from './ChartFour';
 export type { ChartFourProps } from './ChartFour';
+
+export { Table, TableHeader, TableBody, TableRow, TableCell } from './Table';
+export type { TableProps, TableHeaderProps, TableBodyProps, TableRowProps, TableCellProps } from './Table';

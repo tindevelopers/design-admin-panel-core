@@ -1,6 +1,6 @@
 'use client'
 
-import { Card, CardHeader, CardContent } from '../../../components/primitives'
+import { Card, CardHeader, CardContent, CardBody, CardDataStats, ChartOne, ChartTwo } from '../../../components/primitives'
 import { Button } from '../../../components/primitives'
 import { 
   UsersIcon, 
