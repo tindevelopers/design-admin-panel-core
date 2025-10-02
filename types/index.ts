@@ -37,8 +37,8 @@ export interface FormComponentProps extends ComponentProps {
   name?: string;
   value?: string | number | boolean;
   defaultValue?: string | number | boolean;
-  onChange?: (value: any) => void;
-  onValidate?: (value: any) => string | undefined;
+  onChange?: (value: unknown) => void;
+  onValidate?: (value: unknown) => string | undefined;
   required?: boolean;
   readOnly?: boolean;
 }

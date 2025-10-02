@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   HomeIcon,
   UsersIcon,
@@ -9,7 +10,7 @@ import {
 export interface NavigationItem {
   name: string
   href: string
-  icon: any
+  icon: React.ComponentType<{ className?: string }>
   badge?: string
   children?: NavigationItem[]
 }

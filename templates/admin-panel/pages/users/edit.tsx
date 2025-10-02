@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import { Card, CardHeader, CardContent } from '../../../../components/primitives'
 import { Button } from '../../../../components/primitives'
-import { FormInput, FormSelect, FormCheckbox } from '../../../../components/primitives'
+import { FormInput, FormSelect } from '../../../../components/primitives'
 import Breadcrumb from '../../components/Breadcrumb'
 
 export default function EditUser() {

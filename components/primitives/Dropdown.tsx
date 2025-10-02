@@ -44,7 +44,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isOpen]);
+  }, [isOpen, handleOpenChange]);
 
   return (
     <div className={cn('relative', className)} ref={dropdownRef} {...props}>

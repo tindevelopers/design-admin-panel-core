@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Card, CardHeader, CardContent } from '../../../../components/primitives'
 import { Button } from '../../../../components/primitives'

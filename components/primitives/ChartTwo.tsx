@@ -1,7 +1,7 @@
 import React from 'react';
 
 export interface ChartTwoProps {
-  data: any;
+  data: unknown;
   className?: string;
 }
 
