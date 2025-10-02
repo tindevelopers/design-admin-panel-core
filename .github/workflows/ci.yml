@@ -71,7 +71,7 @@ jobs:
         run: npm test -- --coverage
       
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           files: ./coverage/lcov.info
           flags: unittests
@@ -98,7 +98,7 @@ jobs:
         run: npm run build
       
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist/
@@ -125,7 +125,7 @@ jobs:
         run: npm run build-storybook
       
       - name: Upload Storybook artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: storybook-static
           path: storybook-static/
