@@ -23,7 +23,7 @@ export default function PreferencesSettings() {
     console.log('Save preferences:', preferences)
   }
 
-  const togglePreference = (key: string) => {
+  const togglePreference = (key: keyof typeof preferences) => {
     setPreferences((prev) => ({ ...prev, [key]: !prev[key] }))
   }
 
@@ -43,7 +43,7 @@ export default function PreferencesSettings() {
         </CardHeader>
         <CardContent>
           <div className="space-y-6">
-            <SwitchField>
+            <SwitchField name="emailNotifications">
               <Label>Email Notifications</Label>
               <Description>Receive email notifications for important updates</Description>
               <Switch
@@ -52,7 +52,7 @@ export default function PreferencesSettings() {
               />
             </SwitchField>
 
-            <SwitchField>
+            <SwitchField name="pushNotifications">
               <Label>Push Notifications</Label>
               <Description>Receive push notifications on your devices</Description>
               <Switch
@@ -61,7 +61,7 @@ export default function PreferencesSettings() {
               />
             </SwitchField>
 
-            <SwitchField>
+            <SwitchField name="weeklyReports">
               <Label>Weekly Reports</Label>
               <Description>Receive weekly summary reports via email</Description>
               <Switch
@@ -80,7 +80,7 @@ export default function PreferencesSettings() {
           <p className="text-sm text-gray-500">Customize how the interface looks</p>
         </CardHeader>
         <CardContent>
-          <SwitchField>
+          <SwitchField name="darkMode">
             <Label>Dark Mode</Label>
             <Description>Use dark theme for the interface</Description>
             <Switch

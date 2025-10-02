@@ -23,18 +23,25 @@ export type { ShadowToken, SemanticShadowToken } from './shadows';
 export { borderRadius, semanticBorderRadius } from './border-radius';
 export type { BorderRadiusToken, SemanticBorderRadiusToken } from './border-radius';
 
+// Import the actual values for the consolidated object
+import { colors as colorsTokens, semanticColors as semanticColorsTokens } from './colors';
+import { typography as typographyTokens, textStyles as textStylesTokens } from './typography';
+import { spacing as spacingTokens, semanticSpacing as semanticSpacingTokens } from './spacing';
+import { shadows as shadowsTokens, semanticShadows as semanticShadowsTokens } from './shadows';
+import { borderRadius as borderRadiusTokens, semanticBorderRadius as semanticBorderRadiusTokens } from './border-radius';
+
 // Consolidated design tokens object
 export const designTokens = {
-  colors,
-  semanticColors,
-  typography,
-  textStyles,
-  spacing,
-  semanticSpacing,
-  shadows,
-  semanticShadows,
-  borderRadius,
-  semanticBorderRadius,
+  colors: colorsTokens,
+  semanticColors: semanticColorsTokens,
+  typography: typographyTokens,
+  textStyles: textStylesTokens,
+  spacing: spacingTokens,
+  semanticSpacing: semanticSpacingTokens,
+  shadows: shadowsTokens,
+  semanticShadows: semanticShadowsTokens,
+  borderRadius: borderRadiusTokens,
+  semanticBorderRadius: semanticBorderRadiusTokens,
 } as const;
 
 // Component size and variant types

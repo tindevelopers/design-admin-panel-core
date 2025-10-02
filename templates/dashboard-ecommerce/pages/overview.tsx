@@ -1,11 +1,6 @@
 'use client'
 
-import { Card, CardHeader, CardBody } from 'frontend-design-system/vendors/tailadmin/ui/card'
-import { CardDataStats } from 'frontend-design-system/vendors/tailadmin/analytics'
-import { ChartOne, ChartTwo, ChartFour } from 'frontend-design-system/vendors/tailadmin/charts'
-import { Table, TableHeader, TableBody, TableRow, TableCell } from 'frontend-design-system/vendors/tailadmin/ui/table'
-import { Badge } from 'frontend-design-system/vendors/tailadmin/ui/badge'
-import { Button } from 'frontend-design-system/vendors/tailadmin/ui/button'
+import { Card, CardHeader, CardBody, CardDataStats, ChartOne, ChartTwo, ChartFour, Table, TableHeader, TableBody, TableRow, TableCell, Badge, Button } from '../../../components/primitives'
 import {
   ShoppingCartIcon,
   CurrencyDollarIcon,

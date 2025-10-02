@@ -118,7 +118,7 @@ export interface TableColumn<T = any> {
   render?: (value: any, record: T, index: number) => React.ReactNode;
 }
 
-export interface TableProps<T = any> {
+export interface DataTableProps<T = any> {
   data: T[];
   columns: TableColumn<T>[];
   loading?: boolean;
