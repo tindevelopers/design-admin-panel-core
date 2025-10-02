@@ -37,7 +37,7 @@ export default [
       }),
       postcss({
         config: {
-          path: './postcss.config.js',
+          path: './postcss.config.ts',
         },
         extensions: ['.css'],
         minimize: true,

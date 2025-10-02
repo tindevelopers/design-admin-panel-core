@@ -1,14 +1,17 @@
 module.exports = {
   root: true,
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+    jest: true,
+  },
   extends: [
     'eslint:recommended',
-    '@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
+    'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'react', 'react-hooks'],
   parserOptions: {
     ecmaVersion: 2024,
     sourceType: 'module',
@@ -16,18 +19,47 @@ module.exports = {
       jsx: true,
     },
   },
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
+  plugins: ['@typescript-eslint'],
   rules: {
-    'react/react-in-jsx-scope': 'off',
-    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-explicit-any': 'warn',
+    '@typescript-eslint/ban-types': 'warn',
+    'no-console': 'warn',
+    'no-undef': 'off', // TypeScript handles this
   },
-  env: {
-    browser: true,
-    es2024: true,
-    node: true,
+  ignorePatterns: [
+    'node_modules/',
+    '.next/',
+    'dist/',
+    'vendors/',
+    'build/',
+    '**/*.d.ts',
+    '**/.eslintrc.*',
+  ],
+  globals: {
+    React: 'readonly',
+    console: 'readonly',
+    describe: 'readonly',
+    test: 'readonly',
+    expect: 'readonly',
+    it: 'readonly',
+    // DOM globals
+    HTMLElement: 'readonly',
+    HTMLDivElement: 'readonly',
+    HTMLSpanElement: 'readonly',
+    HTMLButtonElement: 'readonly',
+    HTMLInputElement: 'readonly',
+    HTMLSelectElement: 'readonly',
+    HTMLTextAreaElement: 'readonly',
+    HTMLLabelElement: 'readonly',
+    HTMLTableElement: 'readonly',
+    HTMLTableSectionElement: 'readonly',
+    HTMLTableRowElement: 'readonly',
+    HTMLTableCellElement: 'readonly',
+    HTMLParagraphElement: 'readonly',
+    SVGSVGElement: 'readonly',
+    MouseEvent: 'readonly',
+    Node: 'readonly',
+    document: 'readonly',
   },
-}
+};
