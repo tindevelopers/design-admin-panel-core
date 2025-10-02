@@ -1,9 +1,9 @@
 'use client'
 
-import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
-import { CardDataStats } from 'frontend-design-system/components/primitives'
-import { ChartOne, ChartThree, ChartFour } from 'frontend-design-system/components/primitives'
-import { Button } from 'frontend-design-system/components/primitives'
+import { Card, CardHeader, CardContent } from '../../../components/primitives'
+import { CardDataStats } from '../../../components/primitives'
+import { ChartOne, ChartThree, ChartFour } from '../../../components/primitives'
+import { Button } from '../../../components/primitives'
 import {
   EyeIcon,
   UsersIcon,

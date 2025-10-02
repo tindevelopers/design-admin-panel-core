@@ -1,9 +1,9 @@
 'use client'
 
-import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
-import { CardDataStats } from 'frontend-design-system/components/primitives'
-import { ChartOne, ChartThree } from 'frontend-design-system/components/primitives'
-import { Button } from 'frontend-design-system/components/primitives'
+import { Card, CardHeader, CardContent } from '../../../components/primitives'
+import { CardDataStats } from '../../../components/primitives'
+import { ChartOne, ChartThree } from '../../../components/primitives'
+import { Button } from '../../../components/primitives'
 import { UsersIcon, CreditCardIcon, ArrowTrendingUpIcon, BoltIcon } from '@heroicons/react/24/outline'
 
 export default function SaaSDashboard() {

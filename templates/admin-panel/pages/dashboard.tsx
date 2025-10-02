@@ -1,7 +1,7 @@
 'use client'
 
-import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
-import { Button } from 'frontend-design-system/components/primitives'
+import { Card, CardHeader, CardContent } from '../../../components/primitives'
+import { Button } from '../../../components/primitives'
 import { 
   UsersIcon, 
   ShoppingCartIcon, 

@@ -1,11 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
-import { Button } from 'frontend-design-system/components/primitives'
-import { Switch, SwitchField } from 'frontend-design-system/components/primitives'
-import { Label, Description } from 'frontend-design-system/components/primitives'
-import { FormSelect } from 'frontend-design-system/components/primitives'
+import { Card, CardHeader, CardContent } from '../../../components/primitives'
+import { Button } from '../../../components/primitives'
+import { Switch, SwitchField } from '../../../components/primitives'
+import { Label, Description } from '../../../components/primitives'
+import { FormSelect } from '../../../components/primitives'
 import Breadcrumb from '../../components/Breadcrumb'
 
 export default function PreferencesSettings() {

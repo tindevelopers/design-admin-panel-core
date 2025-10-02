@@ -1,9 +1,9 @@
 'use client'
 
-import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
-import { Table, TableHeader, TableBody, TableRow, TableCell } from 'frontend-design-system/components/primitives'
-import { Button } from 'frontend-design-system/components/primitives'
-import { Badge } from 'frontend-design-system/components/primitives'
+import { Card, CardHeader, CardContent } from '../../../components/primitives'
+import { Table, TableHeader, TableBody, TableRow, TableCell } from '../../../components/primitives'
+import { Button } from '../../../components/primitives'
+import { Badge } from '../../../components/primitives'
 import Breadcrumb from '../components/Breadcrumb'
 
 export default function Reports() {

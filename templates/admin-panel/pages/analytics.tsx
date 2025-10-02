@@ -1,7 +1,7 @@
 'use client'
 
-import { Card, CardHeader, CardContent } from 'frontend-design-system/components/primitives'
-import { ChartOne, ChartThree } from 'frontend-design-system/components/primitives'
+import { Card, CardHeader, CardContent } from '../../../components/primitives'
+import { ChartOne, ChartThree } from '../../../components/primitives'
 import Breadcrumb from '../components/Breadcrumb'
 
 export default function Analytics() {
