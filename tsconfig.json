@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": ["DOM", "DOM.Iterable", "ES6"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES6"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -17,16 +21,23 @@
     "declaration": true,
     "declarationMap": true,
     "outDir": "dist",
-    "jsx": "react-jsx"
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "components/**/*",
+    "docs/**/*",
+    "index.ts",
+    "templates/**/*",
     "tokens/**/*",
     "types/**/*",
     "utils/**/*",
-    "templates/**/*",
-    "docs/**/*",
-    "index.ts"
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",

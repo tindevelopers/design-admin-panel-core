@@ -1,6 +1,7 @@
 {
   "name": "frontend-design-system",
   "version": "2.0.0",
+  "type": "module",
   "description": "A comprehensive design system for building modern frontend websites. Includes components from Catalyst UI Kit and TailAdmin Pro.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -47,11 +48,12 @@
     "./vendors/tailadmin": "./vendors/tailadmin-pro-ts/src/components"
   },
   "scripts": {
+    "dev": "next dev",
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
     "type-check": "tsc --noEmit",
-    "lint": "eslint . --ext .ts,.tsx --fix",
-    "lint:check": "eslint . --ext .ts,.tsx",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "jest",
@@ -94,6 +96,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.0.0",
+    "@tailwindcss/postcss": "^4.1.14",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.0",
