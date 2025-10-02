@@ -12,6 +12,8 @@ const features = [
     variant: 'primary',
     icon: PuzzlePieceIcon,
     accent: 'from-primary-500/15 via-primary-500/5 to-transparent',
+    iconColor: 'text-primary-600',
+    iconBackground: 'bg-primary-500/10',
   },
   {
     title: 'Dashboard Templates',
@@ -20,6 +22,8 @@ const features = [
     variant: 'secondary',
     icon: Squares2X2Icon,
     accent: 'from-secondary-500/15 via-secondary-500/5 to-transparent',
+    iconColor: 'text-secondary-600',
+    iconBackground: 'bg-secondary-500/10',
   },
   {
     title: 'Design Tokens',
@@ -29,6 +33,8 @@ const features = [
     variant: 'success',
     icon: SwatchIcon,
     accent: 'from-success-500/15 via-success-500/5 to-transparent',
+    iconColor: 'text-success-600',
+    iconBackground: 'bg-success-500/10',
   },
 ] as const
 
@@ -90,7 +96,7 @@ export default function Home() {
         </section>
 
         <section className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {features.map(({ title, description, cta, variant, icon: Icon, accent }) => (
+          {features.map(({ title, description, cta, variant, icon: Icon, accent, iconColor, iconBackground }) => (
             <Card
               key={title}
               variant="elevated"
@@ -100,7 +106,9 @@ export default function Home() {
               <div className={`absolute inset-0 -z-10 bg-gradient-to-br ${accent}`} />
 
               <div className="flex h-full flex-col">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-500/10 text-primary-600">
+                <div
+                  className={`flex h-12 w-12 items-center justify-center rounded-xl ${iconBackground} ${iconColor}`}
+                >
                   <Icon className="h-6 w-6" aria-hidden="true" />
                 </div>
                 <h2 className="mt-6 text-2xl font-semibold text-slate-900">{title}</h2>
