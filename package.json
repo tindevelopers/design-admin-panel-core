@@ -1,6 +1,7 @@
 {
   "name": "frontend-design-system",
   "version": "2.0.0",
+  "type": "module",
   "description": "A comprehensive design system for building modern frontend websites. Includes components from Catalyst UI Kit and TailAdmin Pro.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
